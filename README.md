@@ -1,2 +1,2 @@
-# joe-SDU.github.io
+# Joe-SDU.github.io
 about life,happiness,and friends
