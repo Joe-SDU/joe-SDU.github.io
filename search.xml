@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>记录生活的小小徐</title>
+    <url>/2020/11/12/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%BE%90/</url>
+    <content><![CDATA[<p>这是一个什么也没有的文章,小徐打算用此页面来上传数据结构(机械工业出版社)的全部习题答案,仅供参考~</p>
+<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396205229&auto=1&height=66"></iframe></div>]]></content>
+      <categories>
+        <category>记录生活</category>
+      </categories>
+  </entry>
+  <entry>
     <title>写在前面</title>
     <url>/2020/11/13/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/</url>
     <content><![CDATA[<p>可以一落千丈，但要一鸣惊人!</p>
 ]]></content>
       <categories>
         <category>记录生活</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Javascript基础知识</title>
-    <url>/2020/11/13/Javascript%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>搭建一个小型博客需要的前导知识</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CSS基础知识</title>
-    <url>/2020/11/13/CSS%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>搭建一个小型博客需要的前导知识</category>
       </categories>
   </entry>
   <entry>
@@ -73,6 +66,14 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>这是第二个标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p><input disabled="" type="checkbox">  HTML段落<br>HTML段落，也称paragraph，是通过p标签定义的。我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips:默认情况下浏览器会在标题前后增加默认空行，会在块级元素后增加一个空行。<br>标题不可做他用，搜索引擎用标题为网页的结构和内容编制索引。<br>网页标题从h1到h6优先级递减。</p>
+</blockquote>
+</li>
+<li><p><input disabled="" type="checkbox">  HTML水平线<br>HTML水平线，用来在界面中分割内容，用hr表示，我们给出实例:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>第一部分<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>第二部分<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><input disabled="" type="checkbox">  HTML注释<br>注释是给编写代码的人看的，不会影响网页结构，格式如下</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这里是注释 --&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><input disabled="" type="checkbox">  HTML链接<br>HTML链接，也称link，是通过a标签定义的。我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;joe-sdu.top&quot;</span>&gt;</span>顺着网线就能找到小徐!<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
@@ -110,7 +111,7 @@
 </li>
 <li><p><input disabled="" type="checkbox">  HTML属性</p>
 </li>
-<li><p>HTML中的属性总是以键值对的形式出现，且在开始标签中规定。我们给出一些针对性属性及其含义</p>
+<li><p>HTML中的属性总是以键值对的形式出现，且在开始标签中规定，属性值总是要打引号，属性采用小写(尽管html不区分大小写)。我们给出一些针对性属性及其含义:</p>
 <table>
 <thead>
 <tr>
@@ -168,7 +169,58 @@
 </tbody></table>
 <p><a href="https://www.w3schools.com/html/">更多具体属性可点击查看</a></p>
 </li>
+<li><p><input disabled="" type="checkbox">  HTML样式<br>HTML样式通过style属性来设置，在以前，有些样式可以通过一些标签和属性来实现。然而在HTML的发展过程中，有些标签和属性逐渐被淘汰，我们应该尽量避免使用，它们是:</p>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>center</td>
+<td>定义居中的内容</td>
+</tr>
+<tr>
+<td>font/basefont</td>
+<td>定义字体</td>
+</tr>
+<tr>
+<td>s/strike</td>
+<td>定义删除线文本</td>
+</tr>
+<tr>
+<td>u</td>
+<td>定义下划线文本</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>定义文字对齐方式</td>
+</tr>
+<tr>
+<td>bgcolor</td>
+<td>定义背景颜色</td>
+</tr>
+<tr>
+<td>color</td>
+<td>定义文本颜色</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>我们用对应的样式代替上面的标签和属性:</p>
+</li>
 </ul>
+<p>1.用background-color样式代替bgcolor:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span> = <span class="string">&quot;background-color:green&quot;</span>&gt;</span> <span class="comment">&lt;!-- 这是绿色的主体 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span> = <span class="string">&quot;background-color:red&quot;</span>&gt;</span>这是红色的标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span> = <span class="string">&quot;background-color:blue&quot;</span>&gt;</span>这是蓝色的段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="HTML进阶篇"><a href="#HTML进阶篇" class="headerlink" title="HTML进阶篇"></a>HTML进阶篇</h2><p><strong>小徐还没来得及写哦~</strong></p>
 ]]></content>
       <categories>
@@ -176,12 +228,19 @@
       </categories>
   </entry>
   <entry>
-    <title>记录生活的小小徐</title>
-    <url>/2020/11/12/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%BE%90/</url>
-    <content><![CDATA[<p>这是一个什么也没有的文章,小徐打算用此页面来上传数据结构(机械工业出版社)的全部习题答案,仅供参考~</p>
-<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396205229&auto=1&height=66"></iframe></div>]]></content>
+    <title>CSS基础知识</title>
+    <url>/2020/11/13/CSS%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>记录生活</category>
+        <category>搭建一个小型博客需要的前导知识</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Javascript基础知识</title>
+    <url>/2020/11/13/Javascript%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>搭建一个小型博客需要的前导知识</category>
       </categories>
   </entry>
 </search>

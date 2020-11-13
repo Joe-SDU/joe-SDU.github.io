@@ -28,7 +28,7 @@
 <meta property="og:description" content="HTML基础篇 超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-13T06:45:32.000Z">
-<meta property="article:modified_time" content="2020-11-13T09:43:10.840Z">
+<meta property="article:modified_time" content="2020-11-13T10:15:23.192Z">
 <meta property="article:author" content="Joe-sdu">
 <meta name="twitter:card" content="summary">
 
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-13 14:45:32 / 修改时间：17:43:10" itemprop="dateCreated datePublished" datetime="2020-11-13T14:45:32+08:00">2020-11-13</time>
+              <time title="创建时间：2020-11-13 14:45:32 / 修改时间：18:15:23" itemprop="dateCreated datePublished" datetime="2020-11-13T14:45:32+08:00">2020-11-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,6 +281,14 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>这是第二个标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p><input disabled="" type="checkbox">  HTML段落<br>HTML段落，也称paragraph，是通过p标签定义的。我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips:默认情况下浏览器会在标题前后增加默认空行，会在块级元素后增加一个空行。<br>标题不可做他用，搜索引擎用标题为网页的结构和内容编制索引。<br>网页标题从h1到h6优先级递减。</p>
+</blockquote>
+</li>
+<li><p><input disabled="" type="checkbox">  HTML水平线<br>HTML水平线，用来在界面中分割内容，用hr表示，我们给出实例:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>第一部分<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>第二部分<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><input disabled="" type="checkbox">  HTML注释<br>注释是给编写代码的人看的，不会影响网页结构，格式如下</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这里是注释 --&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><input disabled="" type="checkbox">  HTML链接<br>HTML链接，也称link，是通过a标签定义的。我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;joe-sdu.top&quot;</span>&gt;</span>顺着网线就能找到小徐!<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
@@ -318,7 +326,7 @@
 </li>
 <li><p><input disabled="" type="checkbox">  HTML属性</p>
 </li>
-<li><p>HTML中的属性总是以键值对的形式出现，且在开始标签中规定。我们给出一些针对性属性及其含义</p>
+<li><p>HTML中的属性总是以键值对的形式出现，且在开始标签中规定，属性值总是要打引号，属性采用小写(尽管html不区分大小写)。我们给出一些针对性属性及其含义:</p>
 <table>
 <thead>
 <tr>
@@ -376,7 +384,58 @@
 </tbody></table>
 <p><a target="_blank" rel="noopener" href="https://www.w3schools.com/html/">更多具体属性可点击查看</a></p>
 </li>
+<li><p><input disabled="" type="checkbox">  HTML样式<br>HTML样式通过style属性来设置，在以前，有些样式可以通过一些标签和属性来实现。然而在HTML的发展过程中，有些标签和属性逐渐被淘汰，我们应该尽量避免使用，它们是:</p>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>center</td>
+<td>定义居中的内容</td>
+</tr>
+<tr>
+<td>font/basefont</td>
+<td>定义字体</td>
+</tr>
+<tr>
+<td>s/strike</td>
+<td>定义删除线文本</td>
+</tr>
+<tr>
+<td>u</td>
+<td>定义下划线文本</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>定义文字对齐方式</td>
+</tr>
+<tr>
+<td>bgcolor</td>
+<td>定义背景颜色</td>
+</tr>
+<tr>
+<td>color</td>
+<td>定义文本颜色</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>我们用对应的样式代替上面的标签和属性:</p>
+</li>
 </ul>
+<p>1.用background-color样式代替bgcolor:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span> = <span class="string">&quot;background-color:green&quot;</span>&gt;</span> <span class="comment">&lt;!-- 这是绿色的主体 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span> = <span class="string">&quot;background-color:red&quot;</span>&gt;</span>这是红色的标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span> = <span class="string">&quot;background-color:blue&quot;</span>&gt;</span>这是蓝色的段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="HTML进阶篇"><a href="#HTML进阶篇" class="headerlink" title="HTML进阶篇"></a>HTML进阶篇</h2><p><strong>小徐还没来得及写哦~</strong></p>
 
     </div>
@@ -515,7 +574,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.2k字</span>
+  <span class="post-count">博客全站共1.6k字</span>
 </div>
 
         
