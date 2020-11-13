@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>记录生活的小小徐</title>
-    <url>/2020/11/12/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%BE%90/</url>
-    <content><![CDATA[<p>这是一个什么也没有的文章,小徐打算用此页面来上传数据结构(机械工业出版社)的全部习题答案,仅供参考~</p>
-<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396205229&auto=1&height=66"></iframe></div>]]></content>
-      <categories>
-        <category>记录生活</category>
-      </categories>
-  </entry>
-  <entry>
     <title>写在前面</title>
     <url>/2020/11/13/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/</url>
     <content><![CDATA[<p>可以一落千丈，但要一鸣惊人!</p>
 ]]></content>
       <categories>
         <category>记录生活</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Javascript基础知识</title>
+    <url>/2020/11/13/Javascript%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>搭建一个小型博客需要的前导知识</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS基础知识</title>
+    <url>/2020/11/13/CSS%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>搭建一个小型博客需要的前导知识</category>
       </categories>
   </entry>
   <entry>
@@ -101,6 +108,69 @@
 <p>Tips:html中的标签最好采用小写，即使html对大小写并不敏感。</p>
 </blockquote>
 </li>
+<li><p><input disabled="" type="checkbox">  HTML属性</p>
+</li>
+<li><p>HTML中的属性总是以键值对的形式出现，且在开始标签中规定。我们给出一些针对性属性及其含义</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>定义的标签</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>链接</td>
+<td>a</td>
+<td>href</td>
+</tr>
+<tr>
+<td>居中排列标题</td>
+<td>h</td>
+<td>align</td>
+</tr>
+<tr>
+<td>背景颜色</td>
+<td>body</td>
+<td>bgcolor</td>
+</tr>
+<tr>
+<td>表格边框</td>
+<td>table</td>
+<td>boder</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>下面是一些适用于大多数HTML元素的属性:</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>规定元素的内容</td>
+<td>class</td>
+</tr>
+<tr>
+<td>规定元素唯一的id</td>
+<td>id</td>
+</tr>
+<tr>
+<td>规定元素的行内样式</td>
+<td>style</td>
+</tr>
+<tr>
+<td>规定元素额外的信息</td>
+<td>title</td>
+</tr>
+<tr>
+<td><a href="https://www.w3schools.com/html/">更对具体属性可查看</a></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
 </ul>
 <h2 id="HTML进阶篇"><a href="#HTML进阶篇" class="headerlink" title="HTML进阶篇"></a>HTML进阶篇</h2><p><strong>小徐还没来得及写哦~</strong></p>
 ]]></content>
@@ -109,19 +179,12 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS基础知识</title>
-    <url>/2020/11/13/CSS%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[]]></content>
+    <title>记录生活的小小徐</title>
+    <url>/2020/11/12/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%BE%90/</url>
+    <content><![CDATA[<p>这是一个什么也没有的文章,小徐打算用此页面来上传数据结构(机械工业出版社)的全部习题答案,仅供参考~</p>
+<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396205229&auto=1&height=66"></iframe></div>]]></content>
       <categories>
-        <category>搭建一个小型博客需要的前导知识</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Javascript基础知识</title>
-    <url>/2020/11/13/Javascript%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>搭建一个小型博客需要的前导知识</category>
+        <category>记录生活</category>
       </categories>
   </entry>
 </search>
