@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>记录生活的小小徐</title>
-    <url>/2020/11/12/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%BE%90/</url>
-    <content><![CDATA[<p>这是一个什么也没有的文章,小徐打算用此网站来上传数据结构(机械工业出版社)的全部习题答案,仅供参考~</p>
-<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396205229&auto=1&height=66"></iframe></div>]]></content>
+    <title>回顾html</title>
+    <url>/2020/11/13/%E5%9B%9E%E9%A1%BEhtml/</url>
+    <content><![CDATA[<h2 id="回顾HTML"><a href="#回顾HTML" class="headerlink" title="回顾HTML"></a><strong>回顾HTML</strong></h2><blockquote>
+<p>超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。</p>
+</blockquote>
+<a id="more"></a>
+<ul>
+<li><input disabled="" type="checkbox"> HTML的基本框架<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>这是小徐的html页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这里是标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p1</span>&gt;</span>这里是第一段<span class="tag">&lt;/<span class="name">p1</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
       <categories>
-        <category>记录生活</category>
+        <category>搭建一个小型博客需要的前导知识</category>
       </categories>
   </entry>
   <entry>
@@ -14,6 +21,15 @@
     <url>/2020/11/13/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/</url>
     <content><![CDATA[<p>可以一落千丈，但要一鸣惊人!</p>
 ]]></content>
+      <categories>
+        <category>记录生活</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>记录生活的小小徐</title>
+    <url>/2020/11/12/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%BE%90/</url>
+    <content><![CDATA[<p>这是一个什么也没有的文章,小徐打算用此网站来上传数据结构(机械工业出版社)的全部习题答案,仅供参考~</p>
+<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396205229&auto=1&height=66"></iframe></div>]]></content>
       <categories>
         <category>记录生活</category>
       </categories>
