@@ -222,7 +222,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span> = <span class="string">&quot;background-color:green&quot;</span>&gt;</span> <span class="comment">&lt;!-- 这是绿色的主体 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span> = <span class="string">&quot;background-color:red&quot;</span>&gt;</span>这是红色的标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span> = <span class="string">&quot;background-color:blue&quot;</span>&gt;</span>这是蓝色的段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="HTML进阶篇"><a href="#HTML进阶篇" class="headerlink" title="HTML进阶篇"></a>HTML进阶篇</h2><p><strong>小徐还没来得及写哦~</strong></p>
-]]></content>
+<h2 id="很适合学习的时候听的歌呀"><a href="#很适合学习的时候听的歌呀" class="headerlink" title="很适合学习的时候听的歌呀!"></a>很适合学习的时候听的歌呀!</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=35847042&auto=1&height=66"></iframe>]]></content>
       <categories>
         <category>搭建一个小型博客需要的前导知识</category>
       </categories>
