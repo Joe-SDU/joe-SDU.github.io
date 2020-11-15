@@ -154,15 +154,16 @@
     <link href="http://joe-sdu.top/2020/11/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E5%89%8D%E8%A8%80/"/>
     <id>http://joe-sdu.top/2020/11/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E5%89%8D%E8%A8%80/</id>
     <published>2020-11-10T04:28:49.000Z</published>
-    <updated>2020-11-15T08:25:59.440Z</updated>
+    <updated>2020-11-15T09:23:11.095Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="代码约定"><a href="#代码约定" class="headerlink" title="代码约定"></a>代码约定</h2><ul><li><input disabled="" type="checkbox"> 代码块统一采用Times New Roman字体，点击右上角即可复制。</li><li><input disabled="" type="checkbox"> 代码在MSVC上编译通过，理论上只要环境相同copy下来就能跑。<blockquote><p>我的编译环境: </p></blockquote></li><li>IDE: Microsoft Visual Studio 2019</li><li>Target: x86_64-w64-mingw32</li><li>gcc: gcc version 8.1.0 (x86_64-posix-sjlj-rev0, Built by MinGW-W64 project)</li></ul><h2 id="答案约定"><a href="#答案约定" class="headerlink" title="答案约定"></a>答案约定</h2><ul><li><input disabled="" type="checkbox"> 有错的答案请私信回复我哈。</li></ul><h2 id="重复代码约定"><a href="#重复代码约定" class="headerlink" title="重复代码约定"></a>重复代码约定</h2><ul><li><input disabled="" type="checkbox"> 如果某代码在前面已经给出，后面不再赘述，只是简单提及。</li></ul>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><h2 id="代码约定"><a href="#代码约定" class="headerlink" title="代码约定"></a>代码约定</h2><ul><li><input disabled="" type="checkbox"> 代码块统一采用Times New Roman字体，点击右上角即可复制。</li><li><input disabled="" type="checkbox"> 代码在MSVC上编译通过，理论上只要环境相同copy下来就能跑。<blockquote><p>我的编译环境: </p></blockquote></li><li>IDE: Microsoft Visual Studio 2019</li><li>Target: x86_64-w64-mingw32</li><li>gcc: gcc version 8.1.0 (x86_64-posix-sjlj-rev0, Built by MinGW-W64 project)</li></ul><h2 id="答案约定"><a href="#答案约定" class="headerlink" title="答案约定"></a>答案约定</h2><ul><li><input disabled="" type="checkbox"> 有错的答案请私信回复我哈。</li></ul><h2 id="重复代码约定"><a href="#重复代码约定" class="headerlink" title="重复代码约定"></a>重复代码约定</h2><ul><li><input disabled="" type="checkbox"> 如果某代码在前面已经给出，后面不再赘述，只是简单提及。</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;代码约定&quot;&gt;&lt;a href=&quot;#代码约定&quot; class=&quot;headerlink&quot; title=&quot;代码约定&quot;&gt;&lt;/a&gt;代码约定&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 代码块统一采用Times New Rom</summary>
+    <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;代码约定&quot;&gt;&lt;a href=&quot;#代码约定&quot; class=&quot;headerlink&quot; title=&quot;代码约定&quot;&gt;&lt;/a&gt;代码约定&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 代码</summary>
       
     
     
