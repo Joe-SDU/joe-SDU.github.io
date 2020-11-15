@@ -78,7 +78,9 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Joe's blog" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Joe's blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -245,205 +247,69 @@
 
       
         <h2 id="HTML基础篇"><a href="#HTML基础篇" class="headerlink" title="HTML基础篇"></a><strong>HTML基础篇</strong></h2><blockquote>
-<p>超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。</p>
-</blockquote>
-<a id="more"></a>
+<p>超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。<br><a id="more"></a></p>
 <ul>
-<li><input disabled="" type="checkbox"> HTML的基本框架<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>这是小徐的html页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这里是标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p1</span>&gt;</span>这里是第一段<span class="tag">&lt;/<span class="name">p1</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>[ ] HTML的基本框架<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>这是小徐的html页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这里是标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p1</span>&gt;</span>这里是第一段<span class="tag">&lt;/<span class="name">p1</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li>注意:HTML中<xxx>代表一个标记，标记通常是成对存在的。</li>
-<li><input disabled="" type="checkbox"> 如何开始编辑HTML</li>
+<li>[ ] 如何开始编辑HTML<br>1.直接采用记事本，具体操作很简单:鼠标停留在桌面—&gt;右键—&gt;建立文本文件—&gt;键入代码块—&gt;修改文件后缀为.html—&gt;保存文件—&gt;再次打开该文件。<br>值得注意的是，默认解释html文件的浏览器是你电脑上设置的默认浏览器，windows用户默认浏览器可在设置里修改。</li>
 </ul>
-<p>1.直接采用记事本，具体操作很简单:鼠标停留在桌面–&gt;右键–&gt;建立文本文件–&gt;键入代码块–&gt;修改文件后缀为.html–&gt;保存文件–&gt;再次打开该文件。</p>
-<blockquote>
-<p>值得注意的是，默认解释html文件的浏览器是你电脑上设置的默认浏览器，windows用户默认浏览器可在设置里修改。</p>
 </blockquote>
 <p>2.使用VScode、sublime Text等文本编辑器进行html文件的编写。</p>
 <ul>
-<li><p><input disabled="" type="checkbox">  HTML中的保留字<br> 所谓保留字，就是一组html语法规范里出现的关键字或者符号，包括&lt;和&gt;等等，浏览器在遇到这些符号时会不清楚到底是一个标签还是小于号/大于号。我们可以用实体数字来解决此问题。常见的实体数字如下:</p>
-<table>
-<thead>
-<tr>
-<th>保留字</th>
-<th>实体名称(不推荐)</th>
-<th>实体编号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&lt;</td>
-<td>&amp;it</td>
-<td>&amp;#60</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>&amp;gt</td>
-<td>&amp;#62</td>
-</tr>
-<tr>
-<td>空格</td>
-<td>&amp;nbsp</td>
-<td>&amp;#160</td>
-</tr>
-</tbody></table>
+<li><p>[ ] HTML中的保留字<br> 所谓保留字，就是一组html语法规范里出现的关键字或者符号，包括&lt;和&gt;等等，浏览器在遇到这些符号时会不清楚到底是一个标签还是小于号/大于号。我们可以用实体数字来解决此问题。常见的实体数字如下:<br> | 保留字 | 实体名称(不推荐) | 实体编号 |<br> |—|—|—|<br> | &lt; | &amp;it  | &amp;#60  |<br> | &gt; | &amp;gt | &amp;#62  |<br> | 空格 | &amp;nbsp | &amp;#160  |</p>
 </li>
-<li><p><input disabled="" type="checkbox">  HTML标题<br>HTML标题，也称heading，是通过h1到h6六个标签定义的，标题会被默认显示成大字、粗体。我们给出实例:</p>
+<li><p>[ ] HTML标题<br>HTML标题，也称heading，是通过h1到h6六个标签定义的，标题会被默认显示成大字、粗体。我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>这是第二个标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p><input disabled="" type="checkbox">  HTML段落<br>HTML段落，也称paragraph，是通过p标签定义的。我们给出实例:</p>
+<li><p>[ ] HTML段落<br>HTML段落，也称paragraph，是通过p标签定义的。我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Tips:默认情况下浏览器会在标题前后增加默认空行，会在块级元素后增加一个空行。<br>标题不可做他用，搜索引擎用标题为网页的结构和内容编制索引。<br>网页标题从h1到h6优先级递减。</p>
 </blockquote>
 </li>
-<li><p><input disabled="" type="checkbox">  HTML水平线<br>HTML水平线，用来在界面中分割内容，用hr表示，我们给出实例:</p>
+<li><p>[ ] HTML水平线<br>HTML水平线，用来在界面中分割内容，用hr表示，我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>第一部分<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>第二部分<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p><input disabled="" type="checkbox">  HTML注释<br>注释是给编写代码的人看的，不会影响网页结构，格式如下</p>
+<li><p>[ ] HTML注释<br>注释是给编写代码的人看的，不会影响网页结构，格式如下</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这里是注释 --&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><input disabled="" type="checkbox">  HTML链接<br>HTML链接，也称link，是通过a标签定义的。我们给出实例:</p>
+<li><p>[ ] HTML链接<br>HTML链接，也称link，是通过a标签定义的。我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;joe-sdu.top&quot;</span>&gt;</span>顺着网线就能找到小徐!<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>其中href后面跟着的是链接地址，两个标签里的话是网页显示的文字，点击这句话就能跳转。</p>
 </li>
-<li><p><input disabled="" type="checkbox">  HTML图像<br>HTML图像，是通过img标签定义的。我们给出实例:</p>
+<li><p>[ ] HTML图像<br>HTML图像，是通过img标签定义的。我们给出实例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;C:/Users/images/小徐的照片屋&quot;</span> <span class="attr">width</span> = <span class="string">&quot;100&quot;</span> <span class="attr">height</span> = <span class="string">&quot;200&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>这个例子似乎有点特殊，原因在于，它没有成对的标签，而是在一个标签里加入了/，同时它引入了几个属性，src:也称source，代表存放图片的路径，width:希望展示图片的宽度，height:希望展示图片的高度。</p>
 </li>
-<li><p><input disabled="" type="checkbox">  HTML元素<br>HTML元素，指的是在开始标记和结束标记之间的内容(也就是上面所说的一对标签之内的内容)。HTML元素语法如下:</p>
+<li><p>[ ] HTML元素<br>HTML元素，指的是在开始标记和结束标记之间的内容(也就是上面所说的一对标签之内的内容)。HTML元素语法如下:</p>
 </li>
-<li><p>HTML元素以开始标记为起始。</p>
-</li>
-<li><p>HTML元素以结束标记为结束。</p>
-</li>
-<li><p>HTML元素内容是位于开始和结束标签之间的内容。</p>
-</li>
-<li><p>HTML某些元素具有空内容。</p>
-</li>
-<li><p>HTML空元素在开始标记中就结束。</p>
-</li>
-<li><p>HTML大多数元素可以拥有属性，比如上面的img。</p>
-</li>
-<li><p>HTML元素可以嵌套，简而言之就是一个元素中可以包含其他元素。<br>我们针对一些特殊的HTML元素进行解释:</p>
-</li>
-<li><p>HTML中的html元素，它定义了整个html文档。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	这里是其他元素内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>HTML中的body元素，它定义了文档的主体。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	这里是其他元素内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>HTML元素以开始标记为起始。</li>
+<li>HTML元素以结束标记为结束。</li>
+<li>HTML元素内容是位于开始和结束标签之间的内容。</li>
+<li>HTML某些元素具有空内容。</li>
+<li>HTML空元素在开始标记中就结束。</li>
+<li>HTML大多数元素可以拥有属性，比如上面的img。</li>
+<li>HTML元素可以嵌套，简而言之就是一个元素中可以包含其他元素。<br>我们针对一些特殊的HTML元素进行解释:</li>
+<li>HTML中的html元素，它定义了整个html文档。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	这里是其他元素内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>HTML中的body元素，它定义了文档的主体。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	这里是其他元素内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>HTML中的空元素，以换行为例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Tips:html中的标签最好采用小写，即使html对大小写并不敏感。</p>
 </blockquote>
 </li>
-<li><p><input disabled="" type="checkbox">  HTML属性</p>
+<li><p>[ ] HTML属性</p>
 </li>
-<li><p>HTML中的属性总是以键值对的形式出现，且在开始标签中规定，属性值总是要打引号，属性采用小写(尽管html不区分大小写)。我们给出一些针对性属性及其含义:</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>定义的标签</th>
-<th>符号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>链接</td>
-<td>a</td>
-<td>href</td>
-</tr>
-<tr>
-<td>居中排列标题</td>
-<td>h</td>
-<td>align</td>
-</tr>
-<tr>
-<td>背景颜色</td>
-<td>body</td>
-<td>bgcolor</td>
-</tr>
-<tr>
-<td>表格边框</td>
-<td>table</td>
-<td>boder</td>
-</tr>
-</tbody></table>
+<li><p>HTML中的属性总是以键值对的形式出现，且在开始标签中规定，属性值总是要打引号，属性采用小写(尽管html不区分大小写)。我们给出一些针对性属性及其含义:<br>| 属性 | 定义的标签 | 符号 |<br>|—|—|—|<br>| 链接 | a | href |<br>| 居中排列标题 | h | align |<br>| 背景颜色 | body | bgcolor |<br>| 表格边框 | table | boder |</p>
 </li>
-<li><p>下面是一些适用于大多数HTML元素的属性:</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>符号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>规定元素的内容</td>
-<td>class</td>
-</tr>
-<tr>
-<td>规定元素唯一的id</td>
-<td>id</td>
-</tr>
-<tr>
-<td>规定元素的行内样式</td>
-<td>style</td>
-</tr>
-<tr>
-<td>规定元素额外的信息</td>
-<td>title</td>
-</tr>
-</tbody></table>
+<li><p>下面是一些适用于大多数HTML元素的属性:<br>| 属性 | 符号 |<br>|—|—|<br>| 规定元素的内容 | class |<br>| 规定元素唯一的id | id |<br>| 规定元素的行内样式 | style |<br>| 规定元素额外的信息 | title |</p>
 <p><a target="_blank" rel="noopener" href="https://www.w3schools.com/html/">更多具体属性可点击查看</a></p>
 </li>
-<li><p><input disabled="" type="checkbox">  HTML样式<br>HTML样式通过style属性来设置，在以前，有些样式可以通过一些标签和属性来实现。然而在HTML的发展过程中，有些标签和属性逐渐被淘汰，我们应该尽量避免使用，它们是:</p>
-<table>
-<thead>
-<tr>
-<th>标签名</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>center</td>
-<td>定义居中的内容</td>
-</tr>
-<tr>
-<td>font/basefont</td>
-<td>定义字体</td>
-</tr>
-<tr>
-<td>s/strike</td>
-<td>定义删除线文本</td>
-</tr>
-<tr>
-<td>u</td>
-<td>定义下划线文本</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>属性名</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>align</td>
-<td>定义文字对齐方式</td>
-</tr>
-<tr>
-<td>bgcolor</td>
-<td>定义背景颜色</td>
-</tr>
-<tr>
-<td>color</td>
-<td>定义文本颜色</td>
-</tr>
-</tbody></table>
+<li><p>[ ] HTML样式<br>HTML样式通过style属性来设置，在以前，有些样式可以通过一些标签和属性来实现。然而在HTML的发展过程中，有些标签和属性逐渐被淘汰，我们应该尽量避免使用，它们是:<br>| 标签名 | 描述 |<br>|—|—|<br>| center | 定义居中的内容 |<br>| font/basefont | 定义字体 |<br>| s/strike | 定义删除线文本 |<br>| u | 定义下划线文本 |</p>
+<p>| 属性名 | 描述 |<br>|—|—|<br>| align | 定义文字对齐方式 |<br>| bgcolor | 定义背景颜色 |<br>| color | 定义文本颜色 |</p>
 </li>
 <li><p>我们用对应的样式代替上面的标签和属性:</p>
 </li>
 </ul>
-<p>1.用background-color样式代替bgcolor:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span> = <span class="string">&quot;background-color:green&quot;</span>&gt;</span> <span class="comment">&lt;!-- 这是绿色的主体 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span> = <span class="string">&quot;background-color:red&quot;</span>&gt;</span>这是红色的标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span> = <span class="string">&quot;background-color:blue&quot;</span>&gt;</span>这是蓝色的段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<p>1.用background-color样式代替bgcolor:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span> = <span class="string">&quot;background-color:green&quot;</span>&gt;</span> <span class="comment">&lt;!-- 这是绿色的主体 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span> = <span class="string">&quot;background-color:red&quot;</span>&gt;</span>这是红色的标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span> = <span class="string">&quot;background-color:blue&quot;</span>&gt;</span>这是蓝色的段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="HTML进阶篇"><a href="#HTML进阶篇" class="headerlink" title="HTML进阶篇"></a>HTML进阶篇</h2><p><strong>小徐还没来得及写哦~</strong></p>
 <h2 id="很适合学习的时候听的歌呀"><a href="#很适合学习的时候听的歌呀" class="headerlink" title="很适合学习的时候听的歌呀!"></a>很适合学习的时候听的歌呀!</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=35847042&auto=1&height=66"></iframe>
     </div>
@@ -675,6 +541,63 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
