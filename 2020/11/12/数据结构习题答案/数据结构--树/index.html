@@ -30,7 +30,7 @@
 <meta property="og:description" content="鉴于自己在看机械工业出版社的数据结构时，常常苦于没有答案，便觉得有必要整理出一份自己的答案，虽然不一定完全正确，实现也不一定高效，但总有些参考价值叭。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-12T04:28:49.000Z">
-<meta property="article:modified_time" content="2020-11-15T14:00:07.691Z">
+<meta property="article:modified_time" content="2020-11-15T15:57:18.230Z">
 <meta property="article:author" content="Joe-sdu">
 <meta name="twitter:card" content="summary">
 
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-15 22:00:07" itemprop="dateModified" datetime="2020-11-15T22:00:07+08:00">2020-11-15</time>
+                <time title="修改时间：2020-11-15 23:57:18" itemprop="dateModified" datetime="2020-11-15T23:57:18+08:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,14 +266,14 @@
 </li>
 <li><p>关键一步: 造树</p>
 <blockquote>
-<p>造树的方法有很多很多，可以采用不断插入节点的方式，也可以采用合并树的方式，这里我们采用后者。前者在B树章节我们在详细说。</p>
+<p>造树的方法有很多很多，可以采用不断插入节点的方式，也可以采用合并树的方式，这里我们采用后者。前者在B树章节我们再详细说。</p>
 </blockquote>
 </li>
 <li><p>公有声明</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">makeTree</span><span class="params">(<span class="keyword">int</span> theElement,linkedBinaryTree&lt;E&gt;&amp; leftTree, linkedBinaryTree&lt;E&gt;&amp; rightTree)</span></span>;</span><br></pre></td></tr></table></figure></li>
 <li><p>实现</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> E&gt;</span><br><span class="line"><span class="keyword">void</span> linkedBinaryTree&lt;E&gt;::makeTree(<span class="keyword">int</span> theElement, linkedBinaryTree&lt;E&gt;&amp; leftTree, linkedBinaryTree&lt;E&gt;&amp; rightTree)</span><br><span class="line">&#123;</span><br><span class="line">	root = <span class="keyword">new</span> binaryTreeNode&lt;E&gt; * (theElement, leftTree.root, rightTree.root);</span><br><span class="line">	leftTree.root = rightTree.root = <span class="literal">nullptr</span>;</span><br><span class="line">	treeSize = leftTree.treeSize + rightTree.treeSize + <span class="number">1</span>;</span><br><span class="line">	leftTree.treeSize = rightTree.treeSize = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>遍历操作: 遍历通过dynamicVisit进行灵活转换，后续大部分操作都得借助它，举个例子: 遍历时只是简单输出。那么我们可以给公有遍历函数传如下函数:</p>
+<li><p>遍历操作: 遍历通过dynamicVisit进行灵活转换，后续大部分操作都得借助它，举个例子:如果遍历时只是简单输出。那么我们可以给公有遍历函数传如下函数:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(binaryTreeNode&lt;T&gt;* subTree)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; subTree-&gt;element &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>到这一步后，理论上如果你和我的编译环境差距不大，都是可以种出一棵树的。接下来的工作都是美化树了，我们会给出实际例子。</p>
@@ -342,7 +342,16 @@
 <blockquote>
 <p>如上写法是自洽的，不会抛出异常。<br>记得在类的公有方法里加上四个声明:</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrderWithoutRecursion</span><span class="params">(<span class="keyword">void</span>(*visit)(binaryTreeNode&lt;E&gt;*))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">equivalentNotion</span><span class="params">(<span class="keyword">void</span>(*visit)(binaryTreeNode&lt;E&gt;*))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrderWithoutRecursion</span><span class="params">(<span class="keyword">void</span>(*visit)(binaryTreeNode&lt;E&gt;*))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrderWithoutRecursion</span><span class="params">(<span class="keyword">void</span>(*visit)(binaryTreeNode&lt;E&gt;*))</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrderWithoutRecursion</span><span class="params">(<span class="keyword">void</span>(*visit)(binaryTreeNode&lt;E&gt;*))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">equivalentNotion</span><span class="params">(<span class="keyword">void</span>(*visit)(binaryTreeNode&lt;E&gt;*))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inOrderWithoutRecursion</span><span class="params">(<span class="keyword">void</span>(*visit)(binaryTreeNode&lt;E&gt;*))</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postOrderWithoutRecursion</span><span class="params">(<span class="keyword">void</span>(*visit)(binaryTreeNode&lt;E&gt;*))</span></span>;</span><br></pre></td></tr></table></figure></li>
+<li><p><input disabled="" type="checkbox">  Page281、T33，34，35，三题思路一致，一起写。与此同时解决了T15-19(爽欸都不用单独画图然后md了)，也不再单独说了。</p>
+</li>
+<li><p>T33:已知前序和中序求后序:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> E&gt;</span><br><span class="line"><span class="keyword">void</span> linkedBinaryTree&lt;E&gt;::initWithPreOrderAndInOrder(E* pre, E* in, <span class="keyword">int</span> theSize)</span><br><span class="line">&#123;</span><br><span class="line">	treeSize = theSize;</span><br><span class="line">	root = initWithPreOrderAndInOrder(pre, <span class="number">0</span>, theSize - <span class="number">1</span>, in, <span class="number">0</span>, theSize - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> E&gt;</span><br><span class="line">binaryTreeNode&lt;E&gt;* linkedBinaryTree&lt;E&gt;::initWithPreOrderAndInOrder(E* pre, <span class="keyword">int</span> pStart, <span class="keyword">int</span> pEnd, E* in, <span class="keyword">int</span> inStart, <span class="keyword">int</span> inEnd)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (pStart &gt; pEnd || inStart &gt; inEnd) <span class="keyword">return</span> <span class="literal">nullptr</span>; <span class="comment">// The end of recursion</span></span><br><span class="line">	binaryTreeNode&lt;E&gt;* newNode = <span class="keyword">new</span> binaryTreeNode&lt;E&gt;(pre[pStart]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = inStart; i &lt; inEnd; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (in[i] == pre[pStart]) &#123;</span><br><span class="line">			newNode-&gt;left = initWithPreOrderAndInOrder(pre, pStart + <span class="number">1</span>, pStart + i - inStart, in, inStart, inStart + i);</span><br><span class="line">			newNode-&gt;right = initWithPreOrderAndInOrder(pre, pStart + i - inStart + <span class="number">1</span>, pEnd, in, i + <span class="number">1</span>, inEnd);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> newNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>T34:已知后序和中序求前序:</p>
+</li>
+</ul>
+<ul>
+<li>T35:一直后序和前序可以求中序，当且仅当以每个节点度为0或者2。(突如其来的机工腔)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="朋友推荐的好听的歌"><a href="#朋友推荐的好听的歌" class="headerlink" title="朋友推荐的好听的歌!"></a>朋友推荐的好听的歌!</h2><div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1396205229&auto=1&height=66"></iframe></div></li>
 </ul>
 
@@ -520,7 +529,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.2k字</span>
+  <span class="post-count">博客全站共7.4k字</span>
 </div>
 
         
