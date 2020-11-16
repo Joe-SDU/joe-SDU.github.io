@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"joe-sdu.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="代码约定  代码块统一采用Times New Roman字体，点击右上角即可复制。  代码在MSVC上编译通过，理论上只要环境相同copy下来就能跑。">
+  <meta name="description" content="何为主定理?  Wikipedia对主定理的描述是:它提供了渐进大O表示许多由分治法得到的递推式的方法。详细介绍可以参考算法导论。 Tips: 不是所有递推关系式都可以用主定理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于数据结构与算法的一点约定">
-<meta property="og:url" content="http://joe-sdu.top/2020/11/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E5%89%8D%E8%A8%80/index.html">
+<meta property="og:title" content="主定理的应用">
+<meta property="og:url" content="http://joe-sdu.top/2020/11/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E4%B8%BB%E5%AE%9A%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
 <meta property="og:site_name" content="Joe&#39;s blog">
-<meta property="og:description" content="代码约定  代码块统一采用Times New Roman字体，点击右上角即可复制。  代码在MSVC上编译通过，理论上只要环境相同copy下来就能跑。">
+<meta property="og:description" content="何为主定理?  Wikipedia对主定理的描述是:它提供了渐进大O表示许多由分治法得到的递推式的方法。详细介绍可以参考算法导论。 Tips: 不是所有递推关系式都可以用主定理。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-10T04:28:49.000Z">
-<meta property="article:modified_time" content="2020-11-15T14:06:41.201Z">
+<meta property="article:published_time" content="2020-11-15T10:43:16.000Z">
+<meta property="article:modified_time" content="2020-11-16T07:52:47.691Z">
 <meta property="article:author" content="Joe-sdu">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://joe-sdu.top/2020/11/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E5%89%8D%E8%A8%80/">
+<link rel="canonical" href="http://joe-sdu.top/2020/11/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E4%B8%BB%E5%AE%9A%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>关于数据结构与算法的一点约定 | Joe's blog</title>
+  <title>主定理的应用 | Joe's blog</title>
   
 
 
@@ -188,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://joe-sdu.top/2020/11/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E5%89%8D%E8%A8%80/">
+    <link itemprop="mainEntityOfPage" href="http://joe-sdu.top/2020/11/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E4%B8%BB%E5%AE%9A%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.jpg">
@@ -201,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关于数据结构与算法的一点约定
+          主定理的应用
         </h1>
 
         <div class="post-meta">
@@ -216,14 +216,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-11-10 12:28:49" itemprop="dateCreated datePublished" datetime="2020-11-10T12:28:49+08:00">2020-11-10</time>
+              <time title="创建时间：2020-11-15 18:43:16" itemprop="dateCreated datePublished" datetime="2020-11-15T18:43:16+08:00">2020-11-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-15 22:06:41" itemprop="dateModified" datetime="2020-11-15T22:06:41+08:00">2020-11-15</time>
+                <time title="修改时间：2020-11-16 15:52:47" itemprop="dateModified" datetime="2020-11-16T15:52:47+08:00">2020-11-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,25 +246,45 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="代码约定"><a href="#代码约定" class="headerlink" title="代码约定"></a>代码约定</h2><ul>
-<li><input disabled="" type="checkbox"> 代码块统一采用Times New Roman字体，点击右上角即可复制。</li>
-<li><input disabled="" type="checkbox"> 代码在MSVC上编译通过，理论上只要环境相同copy下来就能跑。<a id="more"></a>
-<blockquote>
-<p>我的编译环境: </p>
+        <h2 id="何为主定理"><a href="#何为主定理" class="headerlink" title="何为主定理?"></a>何为主定理?</h2><ul>
+<li><input disabled="" type="checkbox"> Wikipedia对主定理的描述是:它提供了渐进大O表示许多由分治法得到的递推式的方法。详细介绍可以参考算法导论。<blockquote>
+<p>Tips: 不是所有递推关系式都可以用主定理。</p>
 </blockquote>
+<a id="more"></a>
+
 </li>
-<li>IDE: Microsoft Visual Studio 2019</li>
-<li>Target: x86_64-w64-mingw32</li>
-<li>gcc: gcc version 8.1.0 (x86_64-posix-sjlj-rev0, Built by MinGW-W64 project)</li>
 </ul>
-<h2 id="答案约定"><a href="#答案约定" class="headerlink" title="答案约定"></a>答案约定</h2><ul>
-<li><input disabled="" type="checkbox"> 有错的答案请私信回复我哈。</li>
+<h2 id="主定理通常的应用情形"><a href="#主定理通常的应用情形" class="headerlink" title="主定理通常的应用情形"></a>主定理通常的应用情形</h2><ul>
+<li>假设有递推式:<br>$$ T(n) = aT(\dfrac {n}{b})+f(n), 其中a\geq1, b&gt;1 $$<br>其中，n是问题的规模，a为子问题数量，\dfrac {n}{b}为每个子问题的规模, f(n)是除递归外额外的工作。那么主定理通常有以下形式:<table>
+<thead>
+<tr>
+<th>递推关系式</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$$T(n) = T(\dfrac {n}{2}) + \varTheta(1)$$</td>
+<td>$$\varTheta(\log n)$$</td>
+</tr>
+<tr>
+<td>$$T(n) = 2T(\dfrac {n}{2}) + \varTheta(1)$$</td>
+<td>$$\varTheta(n)$$</td>
+</tr>
+<tr>
+<td>$$T(n) = 2T(\dfrac {n}{2}) + O(\log n)$$</td>
+<td>$$\varTheta(n)$$</td>
+</tr>
+<tr>
+<td>$$T(n) = 2T(\dfrac {n}{2}) + \varTheta(n)$$</td>
+<td>$$\varTheta(n\log n)$$</td>
+</tr>
+</tbody></table>
+</li>
 </ul>
-<h2 id="重复代码约定"><a href="#重复代码约定" class="headerlink" title="重复代码约定"></a>重复代码约定</h2><ul>
-<li><input disabled="" type="checkbox"> 如果某代码在前面已经给出，后面不再赘述，只是简单提及。</li>
-</ul>
-<h2 id="题目顺序约定"><a href="#题目顺序约定" class="headerlink" title="题目顺序约定"></a>题目顺序约定</h2><ul>
-<li><input disabled="" type="checkbox"> 题目不会按照第一题到最后一题的顺序给出，而是在比较自然的地方引入。题目前会标注题号。</li>
+<h2 id="参考文献和资料"><a href="#参考文献和资料" class="headerlink" title="参考文献和资料"></a>参考文献和资料</h2><ul>
+<li>Wikipedia，2020年10月12日更新版。</li>
+<li>算法导论。</li>
+<li>Michael T. Goodrich and Roberto Tamassia. Algorithm Design: Foundation, Analysis, and Internet Examples. Wiley, 2002. ISBN 0-471-38365-1. The master theorem (including the version of Case 2 included here, which is stronger than the one from CLRS) is on pp. 268–270.</li>
 </ul>
 
     </div>
@@ -281,7 +301,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://joe-sdu.top/2020/11/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E5%89%8D%E8%A8%80/" title="关于数据结构与算法的一点约定">http://joe-sdu.top/2020/11/10/数据结构习题答案/前言/</a>
+    <a href="http://joe-sdu.top/2020/11/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E4%B8%BB%E5%AE%9A%E7%90%86%E7%9A%84%E5%BA%94%E7%94%A8/" title="主定理的应用">http://joe-sdu.top/2020/11/15/数据结构习题答案/主定理的应用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -297,11 +317,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/11/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%A0%91/" rel="next" title="树">
-      树 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/15/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/latex/" rel="prev" title="Latex介绍">
+      <i class="fa fa-chevron-left"></i> Latex介绍
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -360,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%BA%A6%E5%AE%9A"><span class="nav-number">1.</span> <span class="nav-text">代码约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%94%E6%A1%88%E7%BA%A6%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">答案约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%A4%8D%E4%BB%A3%E7%A0%81%E7%BA%A6%E5%AE%9A"><span class="nav-number">3.</span> <span class="nav-text">重复代码约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E9%A1%BA%E5%BA%8F%E7%BA%A6%E5%AE%9A"><span class="nav-number">4.</span> <span class="nav-text">题目顺序约定</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E4%B8%BA%E4%B8%BB%E5%AE%9A%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">何为主定理?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%AE%9A%E7%90%86%E9%80%9A%E5%B8%B8%E7%9A%84%E5%BA%94%E7%94%A8%E6%83%85%E5%BD%A2"><span class="nav-number">2.</span> <span class="nav-text">主定理通常的应用情形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E5%92%8C%E8%B5%84%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">参考文献和资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -495,6 +515,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
