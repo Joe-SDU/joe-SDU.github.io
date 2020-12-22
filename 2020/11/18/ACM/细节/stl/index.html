@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-circle.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"joe-sdu.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="共通操作1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STL">
+<meta property="og:url" content="http://joe-sdu.top/2020/11/18/ACM/%E7%BB%86%E8%8A%82/stl/index.html">
+<meta property="og:site_name" content="Joe&#39;s blog">
+<meta property="og:description" content="共通操作1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-18T04:28:49.000Z">
+<meta property="article:modified_time" content="2020-12-05T07:28:59.168Z">
+<meta property="article:author" content="Joe-sdu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://joe-sdu.top/2020/11/18/ACM/%E7%BB%86%E8%8A%82/stl/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>STL | Joe's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Joe's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Joe's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>小徐的首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>博客分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>博客归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://joe-sdu.top/2020/11/18/ACM/%E7%BB%86%E8%8A%82/stl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="Joe-sdu">
+      <meta itemprop="description" content="Joe永远爱生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joe's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          STL
+        </h1>
+
+        <div class="post-meta">
+            
+              <i class="fa fa-thumb-tack"></i>
+              <font color=7D26CD>置顶</font>
+              <span class="post-meta-divider">|</span>
+            
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-18 12:28:49" itemprop="dateCreated datePublished" datetime="2020-11-18T12:28:49+08:00">2020-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-05 15:28:59" itemprop="dateModified" datetime="2020-12-05T15:28:59+08:00">2020-12-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">藏于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM%E4%B8%93%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">ACM专题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="共通操作"><a href="#共通操作" class="headerlink" title="共通操作"></a>共通操作</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;forward_list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;initializer_list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @copyright: all rights reserved.</span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">* @author: Joe-sdu.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @date: Dec.4.2020</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @tag: 1--容器的分类和共通操作</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  注解: 个人ACM学习笔记，仅供参考，大多来自C++官方文档。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C++容器分类: 序列式容器，关联容器和无序容器。 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 序列式容器: array、vector、string、list、forward_list、deque</span></span><br><span class="line"><span class="comment">// 各个序列式容器的头文件和其名字相同</span></span><br><span class="line"><span class="comment">// 关联式容器: set、multiset、map、multimap</span></span><br><span class="line"><span class="comment">// 各个关联式容器的头文件和名字相同(set与multiset、map与multimap)。</span></span><br><span class="line"><span class="comment">// 无序容器: unorder_set，unorder_multiset、unordered_map、unorder_multimap</span></span><br><span class="line"><span class="comment">// 各个无序容器的头文件也和名字相同。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  容器的共通操作</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.构造与析构</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  ContainerType C; --------- 默认构造函数，获得空容器，其中array将获得默认元素</span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">*  ContainerType C(C2); -------- 拷贝构造函数，建立容器C为C2的拷贝。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  ContainerType C = C2; -------- 同上</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  ContainerType C(RV); -------- 移动构造函数，取RV为初值，不适用于array，始于C++11。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  ContainerType C = RV; -------- 同上</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  ContainerType C(beg, end); -------- 以迭代器区间[beg，end)内的元素构造C，不适用于array。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  ContainerType C(initilizer_list&lt;T&gt;(...)); ------- 以initializer_list构造C，始于C++11，不适用于array。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  ContainerType C = initializer_list&lt;T&gt;(...) ------- 同上但array适用</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  ContainerType C.~ContainerType();</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.大小和容量</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C.size(); ------- 当前容器内元素个数，不适用于forward_list。(下解释)</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.max_size(); ------- 当前容器理想状态下能保存的最大元素数。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.empty(); ------- 判断容器是否为空，为空返回True。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注解</span></span><br><span class="line"><span class="comment">/**************************************************************************</span></span><br><span class="line"><span class="comment">* forward_list是C++11引入的，在此之前只有list。forward_list可以看作弱化版本</span></span><br><span class="line"><span class="comment">* 的list，C++标准规定forward_list至少与用户手写的单向链表一样快，所以甚至不</span></span><br><span class="line"><span class="comment">* 提供size()这样的看似必须的操作，因为这个操作要么需要额外空间。要么需要线性</span></span><br><span class="line"><span class="comment">* 复杂度。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 容器之间的比较</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C1 == C2; ------- 返回C1和C2是否相等，注意相等要求对应元素都相等。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 != C2; ------- 同上</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 &lt; C2; ------- 判断C1是否小于C2，比较时容器内元素必须支持(重载)&lt;运算符，不适用于无序容器。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 &gt; C2; ------- 同上</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 &lt;= C2; ------- 同上</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 &gt;= C2; ------- 同上</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 赋值操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C1 = C2; ------- 把C2中的元素拷贝一份给C1，此操作可能很昂贵。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C = RV; ------- 移动构造方式分配，始于C++11。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C = initializer_list&lt;T&gt;(...) ------- 始于C++11，列表分配，不适用于array</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 交换操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C1.swap(C2); ------- 交换C1、C2，swap是成员函数。 </span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  swap(C1，C2); ------- 交换C1，C2，swap是全局函数，交换代价可能很小。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// swap后指向元素的迭代器和ref仍然有效。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C.begin(); ------- 返回指向首元素的迭代器。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.end(); ------- 返回指向尾元素的下一个元素的迭代器。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.cbegin(); ------- 返回一个const_iterator，指向首元素。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.cend(); ------- 返回一个const_iterator，指向尾元素的下一个位置。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 清空容器</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C.clear(); 不适用于array，会引起迭代器失效。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化举例</span></span><br><span class="line"><span class="comment">//set&lt;int&gt; setInt&#123; istream_iterator&lt;int&gt;(cin),istream_iterator&lt;int&gt;() &#125;; // 从stdin读入</span></span><br><span class="line"><span class="comment">//int arr[10] = &#123; 1,2,3,4,5,6,7,8,9,10 &#125;; // C-style</span></span><br><span class="line"><span class="comment">//deque&lt;int&gt; dequeInt(begin(arr), end(arr)); // 从C-style数组取得值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 访问容器元素的方法</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  Range -- Base -- For loop，始于C++11</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  迭代器方法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 举例</span></span><br><span class="line"><span class="comment">//deque&lt;int&gt; dequeInt = &#123; 1,2,3,4,5,6,7 &#125;;	</span></span><br><span class="line"><span class="comment">// range-base-for</span></span><br><span class="line"><span class="comment">//for (auto&amp; elem : dequeInt) cout &lt;&lt; elem &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// iterator</span></span><br><span class="line"><span class="comment">// for (auto it = dequeInt.begin(); it != dequeInt.end(); ++it) cout &lt;&lt; *it &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">// auto 自动推导出来的类型是deque&lt;int&gt;::iterator</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注解:如果只要求可读，使用const auto。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 容器提供的类型</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  size_type ------- 表示容器大小的unsigned类型。</span></span><br><span class="line"><span class="comment">*  difference_type ------- signed，一般表示迭代器或指针距离</span></span><br><span class="line"><span class="comment">*  value_type ------- 值类型</span></span><br><span class="line"><span class="comment">*  reference_type ------- 引用类型</span></span><br><span class="line"><span class="comment">*  const_reference ------- 常量元素的引用类型</span></span><br><span class="line"><span class="comment">*  iterator ------- 迭代器类型</span></span><br><span class="line"><span class="comment">*  const_iterator ------- 常量迭代器类型</span></span><br><span class="line"><span class="comment">*  pointer ------- 指针类型</span></span><br><span class="line"><span class="comment">*  const_pointer ------- 常量指针类型</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="array"><a href="#array" class="headerlink" title="array"></a>array</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @copyright: all rights reserved.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @author: Joe-sdu.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @date: Dec.4.2020</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @tag: 2--array容器</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  注解: 个人ACM学习笔记，仅供参考，大多来自C++官方文档。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  Array可以看作是封装后的C-style array，它效率不比裸数组差。</span></span><br><span class="line"><span class="comment">*  Array不支持指定分配器。</span></span><br><span class="line"><span class="comment">*  Array支持随机访问，因此可以对它运用任何STL算法。</span></span><br><span class="line"><span class="comment">*  Array的类型是由它的元素类型和大小共同决定的。</span></span><br><span class="line"><span class="comment">*  Array在未指定初值时会被预初始化，对内置类型而言，值不明确。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// array 初始化</span></span><br><span class="line"><span class="built_in">array</span>&lt;<span class="keyword">int</span>, 5&gt; arrInt = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span> &#125;; <span class="comment">// Legal</span></span><br><span class="line">array&lt;float, 5&gt; arrFloat(&#123; 1,2,3,4,5 &#125;); // Illegal</span><br><span class="line"></span><br><span class="line"><span class="comment">// array支持的操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C.empty();</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.size();</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.max_size();</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 == C2;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 != C2;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 &lt; C2;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 &gt; C2;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 &lt;= C2;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1 &gt;= C2;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C[id]; ------- 不检测是否越界，越界是未定义行为</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.at(id); ------- 越界抛出out_of_range</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.front(); ------- 返回首元素的引用</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.back(); ------- 返回尾元素的引用</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.fill(val); ------- 把val赋给每一个元素</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1.swap(C2); ------- 交换C1，C2，C1和C2必须具有相同的类型，此操作代价可能比较高。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  swap(C1,C2); ------- 同上</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器函数</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C.begin();</span></span><br><span class="line"><span class="comment">*  C.end()</span></span><br><span class="line"><span class="comment">*  C.cbegin();</span></span><br><span class="line"><span class="comment">*  C.cend();</span></span><br><span class="line"><span class="comment">*  C.rbegin();</span></span><br><span class="line"><span class="comment">*  C.rend();</span></span><br><span class="line"><span class="comment">*  C.crbegin();</span></span><br><span class="line"><span class="comment">*  C.crend();</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 与大多数STL容器的迭代器函数不同，array的迭代器可能返回寻常指针，但也不保证。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array做C-style-Array</span></span><br><span class="line"><span class="comment">// STL标准的保证 &amp;a[1] == &amp;a[0] + 1;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 基于这一点我们可以这样做</span></span><br><span class="line"><span class="comment">//array&lt;char, 100&gt; arrChar;</span></span><br><span class="line"><span class="comment">//cin &gt;&gt; &amp;arrChar[0];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以利用成员函数</span></span><br><span class="line"><span class="comment">//cin &gt;&gt; arrChar.data();</span></span><br></pre></td></tr></table></figure>
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @copyright: all rights reserved.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @author: Joe-sdu.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @date: Dec.4.2020</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @tag: 3--vector容器</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  注解: 个人ACM学习笔记，仅供参考，大多来自C++官方文档。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  Vector是一个dynamic array。</span></span><br><span class="line"><span class="comment">*  Vector在末端附加元素或者删除元素效率相当好(均摊O(1))，其余位置代价昂贵。</span></span><br><span class="line"><span class="comment">*  Vector支持随机访问，因此可以对它运用任何STL算法。</span></span><br><span class="line"><span class="comment">*  Vector内部预先分配了比元素个数占用空间的空间，这可能导致大量的内存浪费。</span></span><br><span class="line"><span class="comment">*  Vector是STL中最常用的容器，如果没有合适的理由选择其余容器，应使用vector。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// vector的构造</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c; ------- 构造空vector</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c(C2); ------- 拷贝构造函数</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c = C2; ------- 拷贝构造函数</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c(RV); ------- 移动构造函数</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c = RV; ------- 移动构造函数</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c(n); ------- 构造n个元素的vector，每个元素被值初始化。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c(n,e); ------- 构造n个元素的vector，每个元素等于e</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c(beg,end); ------- 利用[beg,end)区间元素构造vector</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c(initializer_list&lt;T&gt;(...)); ------- 列表构造</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  vector&lt;Type&gt; c = initializer_list&lt;T&gt;(...); ------- 列表构造</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// vector的非更新操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C.empty();</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.size();</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.max_size(); ------- 返回理想最大容量。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.capacity(); ------- 返回当前状态下的最大容量。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.reserve(n); ------- 预留n个空间，若n &lt; size，不做操作</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.shrink_to_fit(); ------- 减少capacity，使它等于size，可能不会带来任何操作，始于C++11</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 赋值</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C1 = C2; ------- 代价昂贵</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C = RV； ------- 始于C++11</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C = initializer_list&lt;T&gt;(); ------- 始于C++11</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.assign(n,e); ------- 复制n个e，赋值给C</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.assign(beg,end); ------- 把[beg,end)范围内的元素赋值给C</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.assign(initializer_list&lt;T&gt;()); ------- 把初值列表赋给C</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C1.swap(C2); ------- 交换C1和C2，代价很小。</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  swap(C1,C2); ------- 同上，但采用全局函数。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 元素访问</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C[id]; ------- 越界不包含引用</span></span><br><span class="line"><span class="comment">*  C.at(id); ------- 越界抛出runtime_error</span></span><br><span class="line"><span class="comment">*  C.front(); ------- 返回第一个元素的引用，不检查该元素是否存在</span></span><br><span class="line"><span class="comment">*  C.back(); ------- 返回最后一个元素的引用，不检查元素是否存在</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器相关函数与Array一致</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 安插与移除函数</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  C.push_back(e); ------- 插入e至末尾</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.pop_back(); ------- 删除末尾元素</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.insert(pos,e); ------- 插入元素e至pos前，pos是迭代器位置，返回新元素位置的迭代器</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.insert(pos,n,e); -------  插入元素n个e至pos前，pos是迭代器位置，返回最后插入位置的迭代器</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.insert(pos,beg,end); ------  插入[beg,end)区间元素至pos前，pos是迭代器位置，返回最后插入位置的迭代器</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.insert(pos,initializer_list&lt;T&gt;(...));  插入初值列至pos前，pos是迭代器位置，返回列表里第一个元素位置的迭代器</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.emplace(pos, args...); ------- 在pos前插入args为处置的元素，返回插入位置</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.emplace_back(args...); ------- 附加以args为初值的元素到末尾</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.erase(pos); ------- 删除迭代器位置上的元素</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.erase(beg,end); ------- 删除[beg,end)范围内的元素 </span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.resize(n); ------- 改变size，若减小则调用析构，若增大则对多出的元素默认初始化</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.resize(n,e); ------- 同上，但以e初始化多出的元素</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  C.clear(); ------- 清空容器</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意: Vector未提供移除与某值相等的元素的方法。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// vector可以做C-Style-Array</span></span><br><span class="line"><span class="comment">// STL保证 &amp;V[1] == &amp;V[0]+1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//vector&lt;char&gt; vecString;</span></span><br><span class="line"><span class="comment">//vecString.resize(100); // 必要的一步</span></span><br><span class="line"><span class="comment">//cin &gt;&gt; &amp;vecString[0];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 还可以使用成员方法</span></span><br><span class="line"><span class="comment">//cin &gt;&gt; vecString.data();</span></span><br><span class="line"><span class="comment">//cout &lt;&lt; vecString.data();</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// vector 的异常保证</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  push_back()发生异常时不产生效用</span></span><br><span class="line"><span class="comment">*  pop_back()绝对不抛出任何异常</span></span><br><span class="line"><span class="comment">*  插入等操作要么成功要么就什么也不发生</span></span><br><span class="line"><span class="comment">*  swap和clear不抛出异常</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @copyright: all rights reserved.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @author: Joe-sdu.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @date: Dec.4.2020</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @tag: 4--string容器</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  注解: 个人ACM学习笔记，仅供参考，大多来自C++官方文档。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  string可以看作特殊的vector,很多基本操作和vector相同</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// string的构造</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  string s(s1);</span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">*  string s = s1;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  string s = &quot;xxxxx&quot;;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  string s(&quot;xxxxx&quot;);</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  string s(char[],n); ------- s是字符数组前n个字符的拷贝</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  string s(s1,pos); ------- s是s1从下标pos开始的拷贝</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  string s(s1,pos,len); ------- s是s1从下标pos开始长度为len的拷贝</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 若pos &gt; size,会抛出out_of_range</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字串操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  string s = s1.substr(pos); ------- s是s1从下标为pos开始至末尾的子串</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*  string s = s1.substr(pos,len); ------- s是s1下标为pos开始长度为len的子串</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入与删除操作</span></span><br><span class="line"><span class="comment">// string除了接受迭代器的插入与删除版本,还提供接受下标的版本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 举例</span></span><br><span class="line"><span class="comment">// string s = &quot;abcdefg&quot;;</span></span><br><span class="line"><span class="comment">// string s1 = &quot;hijk&quot;;</span></span><br><span class="line"><span class="comment">// const char* str = &quot;lmnop&quot;</span></span><br><span class="line"><span class="comment">// s.insert(s.size(), 4, &#x27;!&#x27;); ------- 在末尾插入四个感叹号</span></span><br><span class="line"><span class="comment">// s.erase(s.size()-4, 4); ------- 删除刚刚插入的感叹号</span></span><br><span class="line"><span class="comment">// s.insert(s.size(), s2);</span></span><br><span class="line"><span class="comment">// s.insert(s.size(), s2, 0, s2.size());</span></span><br><span class="line"><span class="comment">// s,insert(s.size(), str + 1); ------- 插入str从第二个字符开始的全部字符</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换操作,把s直接替换掉，str不能就是s，迭代器不能指向s，总是替换整个s</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  s.assign(str); ------- str若是C-style则必须以空字符结尾</span></span><br><span class="line"><span class="comment">*  s.assign(str, len); ------- str可能是C-style也可能是string</span></span><br><span class="line"><span class="comment">*  s.assign(str, beg, len); ------- s被替换为str从beg开始长度为len的字符串</span></span><br><span class="line"><span class="comment">*  s.assign(beg, end);</span></span><br><span class="line"><span class="comment">*  s.assign(n, c);</span></span><br><span class="line"><span class="comment">*  s.assign(initializer_list&lt;T&gt;(...));</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 附加元素，str不能就是s，迭代器不能指向s，总是附加到末尾</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  s.append(str); ------- 在s末尾附加str，str可能是C-style也可能是string，str若是C-style则必须以空字符结尾</span></span><br><span class="line"><span class="comment">*  s.append(str, len);</span></span><br><span class="line"><span class="comment">*  s.append(str, beg, len);</span></span><br><span class="line"><span class="comment">*  s.append(beg ,end);</span></span><br><span class="line"><span class="comment">*  s.append(n ,c); ------- 在s末尾附加n个c</span></span><br><span class="line"><span class="comment">*  s.append(initializer_list&lt;T&gt;(...));</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 调换元素</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  s.replace(beg, m, str); ------- 把s中beg开始的n个元素删除，然后在beg位置后添加str</span></span><br><span class="line"><span class="comment">*  s.replace(beg, end, str); </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 除了insert的迭代器版本返回第一个插入字符的位置，以上所有操作均返回指向s的引用(包括insert的下标版本)</span></span><br><span class="line"><span class="comment">// 第一个插入字符的位置是这样的含义: xxxxxx|(从这里后插入)yzw ---&gt; y是第一个插入的字符</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 搜索</span></span><br><span class="line"><span class="comment">// string的每个搜索函数都返回string::size_type类型的值</span></span><br><span class="line"><span class="comment">// 搜索失败是返回const string::size_type npos，他是一个unsigned值，且一般为最大unsigned</span></span><br><span class="line"><span class="comment">// 用int来保存搜索函数的返回值不是个好主意</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 搜索函数，均返回string::size_type</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  s.find(args); ------- 返回args第一次出现的位置</span></span><br><span class="line"><span class="comment">*  s.rfind(args); ------- 返回args最后一次出现的位置</span></span><br><span class="line"><span class="comment">*  s.find_first_of(args); ------- 返回s中第一个能在args中找到的字符的位置</span></span><br><span class="line"><span class="comment">*  s.find_last_of(args); ------- 返回s中最后一个能在args中找到的字符的位置</span></span><br><span class="line"><span class="comment">*  s.find_first_not_of(args); ------- 返回s中第一个不能在args中找到的字符位置</span></span><br><span class="line"><span class="comment">*  s.find_last_not_of(args); ------- 返回s中最后一个不能在args中找到的字符位置</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// args的形式</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  str ------- 可以是C-style(空字符结尾)，也可以是string</span></span><br><span class="line"><span class="comment">*  str, pos ------- 从s的pos位置开始，在str中比对</span></span><br><span class="line"><span class="comment">*  str, pos, n ------- 从s中pos开始比对C-style字符串的前n个位置</span></span><br><span class="line"><span class="comment">*  c, pos ------- 从s中pos位置开始查找字符c</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断未找到</span></span><br><span class="line"><span class="comment">//string::size_type flag = 0;</span></span><br><span class="line"><span class="comment">//if ((flag = s......()) != string::npos) &#123;</span></span><br><span class="line"><span class="comment">//	do something()......</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 比较函数 compare，相等时返回0，大于返回正，小于返回负</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  s1.compare(s2);</span></span><br><span class="line"><span class="comment">*  s1.compare(pos1, n, s2); ------- s1从pos1开始的n个字符与s2比较</span></span><br><span class="line"><span class="comment">*  s1.compare(pos1, n1, s2, pos2 ,n2) ------- s1从pos1开始的n1个字符与s2从pos2开始的n2个字符比较</span></span><br><span class="line"><span class="comment">*  s1.compare(char[]); ------- s1与空字符结尾的C-style字符串比较</span></span><br><span class="line"><span class="comment">*  s1.compare(pos1, n, char[]); ------- s1从pos1开始的n个字符与C-style字符串比较</span></span><br><span class="line"><span class="comment">*  s1.compare(pos1, n1, char[], n2); ------- s1从pos1开始的n1个字符与C-style字符串开始的n2个字符比较</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不要以为传入C-style字符串时C-style字符串只能从头比较，如下是实际操作时的情况</span></span><br><span class="line"><span class="comment">//const char* cStyle = &quot;This is C-style&quot;;</span></span><br><span class="line"><span class="comment">//string s = &quot;C-style&quot;;</span></span><br><span class="line"><span class="comment">//if (s.compare(0, 7, cStyle + 8) == 0) &#123;</span></span><br><span class="line"><span class="comment">//	cout &lt;&lt; &quot;identical!&quot; &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数值转换，p是size_t*类型，指向保存第一个非数值字符的位置，默认0，b是转换进制(默认10)</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  to_string(val); ------- 返回val的string形式，val可以是int，long，long long等任何算术类型，小整数会被提升</span></span><br><span class="line"><span class="comment">*  stoi(s, p, b); ------- 返回s的起始字串的数值，返回值类型是int(C语言里%i也代表int)</span></span><br><span class="line"><span class="comment">*  stol(s, p, b); ------- 同上，但返回long</span></span><br><span class="line"><span class="comment">*  stoul(s, p, b); ------- 同上但返回unsigned long</span></span><br><span class="line"><span class="comment">*  stoll(s, p, b); ------- 同上但返回long long</span></span><br><span class="line"><span class="comment">*  stoull(s, p, b); ------- 同上但返回unsigned long long</span></span><br><span class="line"><span class="comment">*  stof(s, p); ------- 同上但返回float</span></span><br><span class="line"><span class="comment">*  stod(s, p); ------- 同上但返回double</span></span><br><span class="line"><span class="comment">*  stold(s, p); ======= 同上但返回long double</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 用法如下</span></span><br><span class="line"><span class="comment">//string num = &quot;my num: +1234567.345&quot;;</span></span><br><span class="line"><span class="comment">//double number = stod(num.substr(num.find_first_of(&quot;+-.123456789&quot;)));</span></span><br><span class="line"><span class="comment">//cout &lt;&lt; fixed &lt;&lt; setw(20) &lt;&lt; number;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 若string无法转换成数值，抛出invalid_argument异常</span></span><br><span class="line"><span class="comment">// 若转换后的数值无法用任何类型标识(比如太大)，抛出out_of_range异常</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//string num = &quot;my num: +123456754345&quot;;</span></span><br><span class="line"><span class="comment">//int number = stoi(num.substr(num.find_first_of(&quot;+-.123456789&quot;))); // OUT_OF_RANGE</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//string num = &quot;my num: gffdgfg&quot;;</span></span><br><span class="line"><span class="comment">//int number = stoi(num); // INVALID_ARGUMENT</span></span><br></pre></td></tr></table></figure>
+<h2 id="set-multiset"><a href="#set-multiset" class="headerlink" title="set+multiset"></a>set+multiset</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @copyright: all rights reserved.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @author: Joe-sdu.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @date: Dec.4.2020</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @tag: 5--set容器</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  注解: 个人ACM学习笔记，仅供参考，大多来自C++官方文档。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  set是一种关联容器，它的关键字就是值。multiset多增加了允许重复值的特性，除此之外与set并无不同。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// set的一些特性</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  set不允许重复值</span></span><br><span class="line"><span class="comment">*  set中的元素需要满足严格弱序</span></span><br><span class="line"><span class="comment">*  set的迭代器不可以改变其值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// set的创建</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S ------- 默认构造函数，其排序准则默认为less&lt;T&gt;</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S(op) ------- 给定排序准则 </span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S(S1) ------- 复制构造函数</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S = S1 ------- 拷贝构造函数</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S(RV) ------- 移动构造函数</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S = RV ------- 移动构造函数</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S(beg, end) ------- 以迭代器范围[beg, end)内的元素构造</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S(beg, end, op) ------- 以[beg, end)内的值未初始值构造S，以op为排序准则</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S(initializer_list&lt;T&gt;(...)) ------- 用初值列初始化</span></span><br><span class="line"><span class="comment">*  set&lt;Type&gt; S = initializer_list&lt;T&gt;(...) ------- 用初值列初始化</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以在创建时在模板参数中指定排序准则，形式如下</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  set&lt;Type,greater&lt;Type&gt;()&gt; S</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// set的一些基本操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  S.key_comp() ------- 返回比较准则</span></span><br><span class="line"><span class="comment">*  S.value_comp() ------- 返回针对value的排序准则(对set而言key就是value)</span></span><br><span class="line"><span class="comment">*  S.empty()</span></span><br><span class="line"><span class="comment">*  S.size()</span></span><br><span class="line"><span class="comment">*  S.max_size()</span></span><br><span class="line"><span class="comment">*  S1 == S2</span></span><br><span class="line"><span class="comment">*  S1 != S2</span></span><br><span class="line"><span class="comment">*  S1 &lt; S2</span></span><br><span class="line"><span class="comment">*  S1 &gt; S2</span></span><br><span class="line"><span class="comment">*  S1 &lt;= S2</span></span><br><span class="line"><span class="comment">*  S1 &gt;= S2</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 注意set比较时两个set的元素和排序准则必须有相同类型，否则会产生编译错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找</span></span><br><span class="line"><span class="comment">// 注意: 对set进行查找时要使用set的成员函数，其具有对数复杂度，而STL算法中的查找函数具有线性复杂度</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  S.count(val) ------- 返回元素值时val的元素个数</span></span><br><span class="line"><span class="comment">*  S.find(val) ------- 返回值为val的第一个元素的位置，找不到则返回end</span></span><br><span class="line"><span class="comment">*  S.lower_bound(val) ------- 返回元素值&gt;=val的第一个位置</span></span><br><span class="line"><span class="comment">*  S.upper_bound(val) ------- 返回元素值&gt;val的第一个位置</span></span><br><span class="line"><span class="comment">*  S.equal_range(val) ------- 返回值等于val的区间，也即一个pair，类型是pair&lt;set&lt;Type&gt;::iterator,set&lt;Type&gt;::iterator&gt;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 赋值</span></span><br><span class="line"><span class="comment">// 复制的两个set的排序准则类型要相同(不代表必须要一样)，不然的话随着赋值或者交换的进行排序准则也会跟着交换</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  S1.swap(S2)</span></span><br><span class="line"><span class="comment">*  swap(S1, S2)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代器相关操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  S.begin()</span></span><br><span class="line"><span class="comment">*  S.end()</span></span><br><span class="line"><span class="comment">*  S.cbegin()</span></span><br><span class="line"><span class="comment">*  S.cend()</span></span><br><span class="line"><span class="comment">*  S.rbegin()</span></span><br><span class="line"><span class="comment">*  S.rend()</span></span><br><span class="line"><span class="comment">*  S.crbegin()</span></span><br><span class="line"><span class="comment">*  S.crend()</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 注意set的迭代器不能改变容器元素值，且其迭代器是双向迭代器，不是所有算法都适用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 元素的插入和删除</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  S.insert(val) ------- 安插元素val，返回插入位置(无论是否成功)</span></span><br><span class="line"><span class="comment">*  S.insert(pos, val) ------- 安插元素val，pos是提示位置，代表查找起点</span></span><br><span class="line"><span class="comment">*  S.insert(beg, end) ------- 把[beg, end)内的所有元素安插到S，无返回值</span></span><br><span class="line"><span class="comment">*  S.insert(initializer_list&lt;T&gt;(...)) ------- 安插初值列元素，无返回值，始于C++11</span></span><br><span class="line"><span class="comment">*  S.emplace(args...) ------- 安插args，返回插入位置(无论是否成功)</span></span><br><span class="line"><span class="comment">*  S.emplace_hint(pos, args...) ------- 安插args，返回插入位置，pos是给定的起始搜寻位</span></span><br><span class="line"><span class="comment">*  S.erase(val) ------- 移除与val相等的元素 **注意移除set的元素不可以用remove，因为remove会改变元素值</span></span><br><span class="line"><span class="comment">*  S.erase(pos) ------- 删除迭代器位置上的元素</span></span><br><span class="line"><span class="comment">*  S.erase(beg, end) ------- 移除迭代器区间内的所有元素</span></span><br><span class="line"><span class="comment">*  S.clear() ------- 清空set</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// C++保证等值元素的相对次序不会在插入或者删除元素后发生改变</span></span><br><span class="line"><span class="comment">// insert和emplace在插入多个元素时不返回位置是考虑到效率问题</span></span><br><span class="line"><span class="comment">// insert和emplace返回的位置信息时一个pair，类型是pair&lt;set&lt;Type&gt;::iterator, bool&gt;，second成员代表是否插入成功</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 运行期间指定排序准则</span></span><br></pre></td></tr></table></figure>
+<h2 id="map-multimap"><a href="#map-multimap" class="headerlink" title="map+multimap"></a>map+multimap</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;initializer_list&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @copyright: all rights reserved.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @author: Joe-sdu.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @date: Dec.4.2020</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @tag: 6--map容器</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  注解: 个人ACM学习笔记，仅供参考，大多来自C++官方文档。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  map是一种关联容器，它的元素都时KEY:VALUE的形式。multimap和map操作一样，只是增加了支持重复关键字的特性。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map的一些特性</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  map是关联数组，关键字是const</span></span><br><span class="line"><span class="comment">*  map中的元素也要求满足严格弱序</span></span><br><span class="line"><span class="comment">*  map的元素是一个pair</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map中的一些类型</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt;::key_type ------- 关键字类型</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt;::value_type ------- pair</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt;::mapped_type ------- 与关键字关联的类型E</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map的构造</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M(op)</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M(M1)</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M(RV);</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M = RV</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M(beg, end)</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M(beg, end, op)</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M(initializer_list&lt;pair&lt;const K, E&gt;&gt;(...))</span></span><br><span class="line"><span class="comment">*  map&lt;const K, E&gt; M = initializer_list&lt;pair&lt;const K, E&gt;&gt;(...)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以在创建时在模板参数列表中加入排序准则map&lt;const K, E, greater&lt;const K&gt;()&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map的赋值操作</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  M = M1</span></span><br><span class="line"><span class="comment">*  M = RV</span></span><br><span class="line"><span class="comment">*  M = initializer_list&lt;pair&lt;const K, E&gt;(...)&gt;</span></span><br><span class="line"><span class="comment">*  M.swap(M1)</span></span><br><span class="line"><span class="comment">*  swap(M, M1)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 赋值操作需要保证两个容器排序准则的类型相同(排序准则不一定要一样)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map的迭代器操作和set一样，为双向迭代器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不能对map和multimap调用更易型算法，如remove</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map的元素插入和删除与set相同，利用insert和emplace插入，erase和clear删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map元素安插时，可以利用make_pair、pair以及value_type</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map查找元素可以用迭代器，或者与set类似的方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// map支持下标操作，如下</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  M[KEY] ------- 不检查是否找到</span></span><br><span class="line"><span class="comment">*  M.at(KEY) ------- 未找到抛出异常</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意M[KEY]中的KEY不一定是数字</span></span><br><span class="line"><span class="comment">// KEY未找到时会自动插入一个值(副作用)，这种插入稍微慢于insert，因为它存在一次默认初始化的过程，随后这个默认值被覆盖。</span></span><br></pre></td></tr></table></figure>
+<h2 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h2><h2 id="forward-list"><a href="#forward-list" class="headerlink" title="forward_list"></a>forward_list</h2><h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><h2 id="容器适配器"><a href="#容器适配器" class="headerlink" title="容器适配器"></a>容器适配器</h2><h2 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h2><h2 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h2><h2 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h2><h2 id="unordered-map"><a href="#unordered-map" class="headerlink" title="unordered_map"></a>unordered_map</h2><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul>
+<li>查找<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">upper_bound(a，b，c) <span class="comment">// 返回[a，b)里第一个大于c的位置，若未找到返回尾后迭代器或最合适的插入位置。</span></span><br><span class="line">lower_bound(a，b，c) <span class="comment">// 返回[a，b)里第一个大于等于c的位置</span></span><br><span class="line">equal_range(a，b，c) <span class="comment">// 返回[a，b)里等于c的值的范围。</span></span><br></pre></td></tr></table></figure></li>
+<li>去重<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unique(a，b) <span class="comment">// 把[a，b)范围内所有重复的元素挪到最后，返回未重复元素的尾后位置。具体对vector而言:</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; test;</span><br><span class="line">test.resize(unique(test.begin(),test.end())-test.begin());</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Joe-sdu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://joe-sdu.top/2020/11/18/ACM/%E7%BB%86%E8%8A%82/stl/" title="STL">http://joe-sdu.top/2020/11/18/ACM/细节/stl/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/18/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/%E6%88%91%E4%BC%9A%E9%87%87%E6%9B%B4%E5%A4%9A%E7%9A%84%E9%9B%8F%E8%8F%8A/" rel="prev" title="我会采更多的雏菊">
+      <i class="fa fa-chevron-left"></i> 我会采更多的雏菊
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/18/ACM/%E7%BB%86%E8%8A%82/C++%E7%BB%86%E8%8A%82/" rel="next" title="C++细节">
+      C++细节 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E9%80%9A%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">共通操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array"><span class="nav-number">2.</span> <span class="nav-text">array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-number">3.</span> <span class="nav-text">vector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string"><span class="nav-number">4.</span> <span class="nav-text">string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-multiset"><span class="nav-number">5.</span> <span class="nav-text">set+multiset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map-multimap"><span class="nav-number">6.</span> <span class="nav-text">map+multimap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deque"><span class="nav-number">7.</span> <span class="nav-text">deque</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forward-list"><span class="nav-number">8.</span> <span class="nav-text">forward_list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">9.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8"><span class="nav-number">10.</span> <span class="nav-text">容器适配器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#queue"><span class="nav-number">11.</span> <span class="nav-text">queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue"><span class="nav-number">12.</span> <span class="nav-text">priority_queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack"><span class="nav-number">13.</span> <span class="nav-text">stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered-map"><span class="nav-number">14.</span> <span class="nav-text">unordered_map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">15.</span> <span class="nav-text">算法</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Joe-sdu"
+      src="/images/header.jpg">
+  <p class="site-author-name" itemprop="name">Joe-sdu</p>
+  <div class="site-description" itemprop="description">Joe永远爱生活</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Joe-SDU?tab=repositories" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Joe-SDU?tab&#x3D;repositories" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:joesdu@163.com" title="E-Mail → mailto:joesdu@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joe-sdu</span>
+</div>
+<!--以下为添加的代码-->
+      <!--统计start-->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div class="powered-by">
+        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+          本站访客数:<span id="busuanzi_value_site_uv"></span>
+        </span>
+        </div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共40.4k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- 页面点击礼花效果 -->
+<script type="text/javascript" src="/js/firework.js"></script>
+
+</body>
+</html>
