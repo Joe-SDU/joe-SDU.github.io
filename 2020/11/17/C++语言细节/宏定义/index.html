@@ -30,7 +30,7 @@
 <meta property="og:description" content="C++宏(macro)的定义与使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-17T04:28:49.000Z">
-<meta property="article:modified_time" content="2020-11-26T13:46:38.910Z">
+<meta property="article:modified_time" content="2020-12-18T11:25:06.318Z">
 <meta property="article:author" content="Joe-sdu">
 <meta name="twitter:card" content="summary">
 
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-26 21:46:38" itemprop="dateModified" datetime="2020-11-26T21:46:38+08:00">2020-11-26</time>
+                <time title="修改时间：2020-12-18 19:25:06" itemprop="dateModified" datetime="2020-12-18T19:25:06+08:00">2020-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,7 +262,9 @@
 </ul>
 <p>1.#是转换符，它把一个符号直接转换成字符串，如下:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TOSTRING( S ) #S</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; TOSTRING( myTest );</span><br></pre></td></tr></table></figure>
-<p>输出如下</p>
+<blockquote>
+<p>Tips:#@表示用单引号表示字符。<br>输出如下</p>
+</blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myTest</span><br></pre></td></tr></table></figure>
 <p>2.##是连接符，它把两个记号连接成一个，如下:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实际定义了x1和x2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEF_X( n ) x##n</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">DEF_X</span><span class="params">( <span class="number">1</span> )</span> </span>= <span class="number">4</span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">DEF_X</span><span class="params">( <span class="number">2</span> )</span> </span>= <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
@@ -408,7 +410,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -470,7 +472,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共40.4k字</span>
+  <span class="post-count">博客全站共40.7k字</span>
 </div>
 
         

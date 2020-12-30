@@ -829,6 +829,26 @@
       </categories>
   </entry>
   <entry>
+    <title>最大连续和</title>
+    <url>/2020/12/13/ACM/%E7%AE%97%E6%B3%95%E5%92%8C%E6%A8%A1%E6%9D%BF%E6%80%BB%E7%BB%93/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%92%8C%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>##O(nlogn) 分治法</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxsum</span><span class="params">(<span class="keyword">int</span>* A,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(y-x == <span class="number">1</span>) <span class="keyword">return</span> A[x];</span><br><span class="line">    <span class="keyword">int</span> m = x+(y-x)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> maxs = max(maxsum(A,x,m),maxsum(A,m,y));</span><br><span class="line">    <span class="keyword">int</span> v = <span class="number">0</span>,L = A[m<span class="number">-1</span>],R = A[m];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = m<span class="number">-1</span>;i &gt;= x;i--) L = max(L,v+=A[i]);</span><br><span class="line">    v = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = m;i &lt; y;i++) R = max(R,v+=A[i]);</span><br><span class="line">    <span class="keyword">return</span> max(maxs,L+R);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="O-n"><a href="#O-n" class="headerlink" title="O(n)"></a>O(n)</h2><ul>
+<li>维护最小前缀和<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10000</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> S[maxn];</span><br><span class="line"><span class="keyword">int</span> cur[maxn];</span><br><span class="line"><span class="keyword">int</span> prefix[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    prefix[<span class="number">0</span>] = cur[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; S[i];</span><br><span class="line">        prefix[i] = prefix[i<span class="number">-1</span>]+S[i]; <span class="comment">// prefix sum</span></span><br><span class="line">        cur[i] = min(cur[i<span class="number">-1</span>],prefix[i]); <span class="comment">// current minimum prefix</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> maxs = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) maxs = max(maxs,prefix[i]-cur[i]);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; maxs &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="O-n-贪心"><a href="#O-n-贪心" class="headerlink" title="O(n) 贪心"></a>O(n) 贪心</h2><ul>
+<li>每次从前向后扫描，记录每个位置的最大sum，若加入下一个元素会使得序列小于0，则此元素不加入，同时令sum=0</li>
+<li>理由: 若加入该元素，加入该元素后的前缀序列&lt;0，则它无论如何都不可能与后面的元素组成最优解，因为后面的元素不加上它反而更大。<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10000</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> S[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) <span class="built_in">cin</span> &gt;&gt; S[i];</span><br><span class="line">    <span class="keyword">int</span> best = S[<span class="number">1</span>],sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(sum+S[i] &lt; <span class="number">0</span>) sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> best = max(best,sum+=S[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; best;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>ACM专题</category>
+      </categories>
+  </entry>
+  <entry>
     <title>高精度板子</title>
     <url>/2020/12/13/ACM/%E7%AE%97%E6%B3%95%E5%92%8C%E6%A8%A1%E6%9D%BF%E6%80%BB%E7%BB%93/%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<h2 id="高精度板子-未压位"><a href="#高精度板子-未压位" class="headerlink" title="高精度板子(未压位)"></a>高精度板子(未压位)</h2><ul>
@@ -1236,7 +1256,9 @@
 </ul>
 <p>1.#是转换符，它把一个符号直接转换成字符串，如下:</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TOSTRING( S ) #S</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; TOSTRING( myTest );</span><br></pre></td></tr></table></figure>
-<p>输出如下</p>
+<blockquote>
+<p>Tips:#@表示用单引号表示字符。<br>输出如下</p>
+</blockquote>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">myTest</span><br></pre></td></tr></table></figure>
 <p>2.##是连接符，它把两个记号连接成一个，如下:</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 实际定义了x1和x2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEF_X( n ) x##n</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">DEF_X</span><span class="params">( <span class="number">1</span> )</span> </span>= <span class="number">4</span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">DEF_X</span><span class="params">( <span class="number">2</span> )</span> </span>= <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
@@ -1305,6 +1327,14 @@
       </categories>
   </entry>
   <entry>
+    <title>Javascript基础知识</title>
+    <url>/2020/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Javascript%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>搭建一个小型博客需要的前导知识</category>
+      </categories>
+  </entry>
+  <entry>
     <title>linux入门</title>
     <url>/2020/11/13/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/linux/</url>
     <content><![CDATA[<h2 id="我的linux初体验"><a href="#我的linux初体验" class="headerlink" title="我的linux初体验"></a>我的linux初体验</h2><a id="more"></a>
@@ -1343,14 +1373,6 @@
 ]]></content>
       <categories>
         <category>实用工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Javascript基础知识</title>
-    <url>/2020/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Javascript%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>搭建一个小型博客需要的前导知识</category>
       </categories>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="http://joe-sdu.top/atom.xml" rel="self"/>
   
   <link href="http://joe-sdu.top/"/>
-  <updated>2020-12-13T15:41:00.564Z</updated>
+  <updated>2020-12-18T15:37:28.763Z</updated>
   <id>http://joe-sdu.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最大连续和</title>
+    <link href="http://joe-sdu.top/2020/12/13/ACM/%E7%AE%97%E6%B3%95%E5%92%8C%E6%A8%A1%E6%9D%BF%E6%80%BB%E7%BB%93/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%92%8C%E9%97%AE%E9%A2%98/"/>
+    <id>http://joe-sdu.top/2020/12/13/ACM/%E7%AE%97%E6%B3%95%E5%92%8C%E6%A8%A1%E6%9D%BF%E6%80%BB%E7%BB%93/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%92%8C%E9%97%AE%E9%A2%98/</id>
+    <published>2020-12-13T04:28:49.000Z</published>
+    <updated>2020-12-18T15:37:28.763Z</updated>
+    
+    <content type="html"><![CDATA[<p>##O(nlogn) 分治法</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxsum</span><span class="params">(<span class="keyword">int</span>* A,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(y-x == <span class="number">1</span>) <span class="keyword">return</span> A[x];</span><br><span class="line">    <span class="keyword">int</span> m = x+(y-x)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> maxs = max(maxsum(A,x,m),maxsum(A,m,y));</span><br><span class="line">    <span class="keyword">int</span> v = <span class="number">0</span>,L = A[m<span class="number">-1</span>],R = A[m];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = m<span class="number">-1</span>;i &gt;= x;i--) L = max(L,v+=A[i]);</span><br><span class="line">    v = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = m;i &lt; y;i++) R = max(R,v+=A[i]);</span><br><span class="line">    <span class="keyword">return</span> max(maxs,L+R);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="O-n"><a href="#O-n" class="headerlink" title="O(n)"></a>O(n)</h2><ul><li>维护最小前缀和<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10000</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> S[maxn];</span><br><span class="line"><span class="keyword">int</span> cur[maxn];</span><br><span class="line"><span class="keyword">int</span> prefix[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    prefix[<span class="number">0</span>] = cur[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; S[i];</span><br><span class="line">        prefix[i] = prefix[i<span class="number">-1</span>]+S[i]; <span class="comment">// prefix sum</span></span><br><span class="line">        cur[i] = min(cur[i<span class="number">-1</span>],prefix[i]); <span class="comment">// current minimum prefix</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> maxs = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) maxs = max(maxs,prefix[i]-cur[i]);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; maxs &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h2 id="O-n-贪心"><a href="#O-n-贪心" class="headerlink" title="O(n) 贪心"></a>O(n) 贪心</h2><ul><li>每次从前向后扫描，记录每个位置的最大sum，若加入下一个元素会使得序列小于0，则此元素不加入，同时令sum=0</li><li>理由: 若加入该元素，加入该元素后的前缀序列&lt;0，则它无论如何都不可能与后面的元素组成最优解，因为后面的元素不加上它反而更大。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10000</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> S[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) <span class="built_in">cin</span> &gt;&gt; S[i];</span><br><span class="line">    <span class="keyword">int</span> best = S[<span class="number">1</span>],sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(sum+S[i] &lt; <span class="number">0</span>) sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> best = max(best,sum+=S[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; best;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;##O(nlogn) 分治法&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/</summary>
+      
+    
+    
+    
+    <category term="ACM专题" scheme="http://joe-sdu.top/categories/ACM%E4%B8%93%E9%A2%98/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>高精度板子</title>
@@ -248,9 +271,9 @@
     <link href="http://joe-sdu.top/2020/11/17/C++%E8%AF%AD%E8%A8%80%E7%BB%86%E8%8A%82/%E5%AE%8F%E5%AE%9A%E4%B9%89/"/>
     <id>http://joe-sdu.top/2020/11/17/C++%E8%AF%AD%E8%A8%80%E7%BB%86%E8%8A%82/%E5%AE%8F%E5%AE%9A%E4%B9%89/</id>
     <published>2020-11-17T04:28:49.000Z</published>
-    <updated>2020-11-26T13:46:38.910Z</updated>
+    <updated>2020-12-18T11:25:06.318Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="C-宏-macro-的定义与使用"><a href="#C-宏-macro-的定义与使用" class="headerlink" title="C++宏(macro)的定义与使用"></a>C++宏(macro)的定义与使用</h2><a id="more"></a><ul><li>C++里的宏的执行方式很简单，就是直接进行替换，它不占用运行时间，但是会使得展开后代码变长。</li><li>普通宏定义注意事项</li></ul><p>1.宏名一般大写。<br>2.宏名替换发生在预处理阶段。<br>3.宏定义末尾一般不加分号。<br>4.宏定义不分配内存。<br>5.宏定义的作用域是其后的程序。<br>6.宏定义可以嵌套。</p><ul><li>带参宏</li></ul><p>1.尽量多加括号。<br>2.宏名和括号间不要有空格。<br>3.宏不做计算。</p><ul><li>一些基础宏定义方式<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dd double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 100</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(A,B) ((A) &gt; (B)? A : B)</span></span><br></pre></td></tr></table></figure></li><li>特殊符号#和##</li></ul><p>1.#是转换符，它把一个符号直接转换成字符串，如下:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TOSTRING( S ) #S</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; TOSTRING( myTest );</span><br></pre></td></tr></table></figure><p>输出如下</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myTest</span><br></pre></td></tr></table></figure><p>2.##是连接符，它把两个记号连接成一个，如下:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实际定义了x1和x2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEF_X( n ) x##n</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">DEF_X</span><span class="params">( <span class="number">1</span> )</span> </span>= <span class="number">4</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">DEF_X</span><span class="params">( <span class="number">2</span> )</span> </span>= <span class="number">3</span>;</span><br></pre></td></tr></table></figure><ul><li>变参宏:一个十分有用的技术，它的使用有两种方式。</li></ul><p>1.不给变参名字，采用默认变参__VA_ARGS__代替可变参数，如下:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> print(s,...) printf(s,__VA_ARGS__)</span></span><br><span class="line">print(<span class="string">&quot;hello,I am %s,I am %d years old&quot;</span>,<span class="string">&quot;Joe&quot;</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure><blockquote><p>上面的这种做法是有一定问题的，因为按照常理我们可以只用printf打印字符串，像面这样做的话，如下代码</p></blockquote><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&quot;my life&quot;</span>);</span><br></pre></td></tr></table></figure><blockquote><p>将被替换为print(“my life”,);这在g++下报错(MSVC不报错很奇怪…)。</p></blockquote><ul><li>解决方式有两种:</li></ul><p>1.采用转换符#，因为__VA_ARGS__无值，所以#__VA_ARGS__将其转换为空字符串，而字符串的拼接操作时被允许的。<br>2.采用连接符##，原理一样，不再赘述。</p><p>2.给变参起名字(常用名字有args等等)，如下演示:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prints(s,args...) fprintf(stderr,s,args)</span></span><br><span class="line">prints(hello, I am % s, I am % d years old<span class="string">&quot;,&quot;</span>Joe<span class="string">&quot;,18);</span></span><br></pre></td></tr></table></figure><blockquote><p>若变参为空，解决方式和上面的默认变参宏一样。(MSVC下第二种方式竟然报错)。</p></blockquote><ul><li>预定义宏: 编译器支持且默认自带的宏，常见的有<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; __LINE__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 返回当前行号</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; __FILE__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 当前文件名(绝对路径)</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; __TIME__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 当前文件编译时间</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; __DATE__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 编译日期</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; __TIMESTAMP__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 最后一次修改源代码的时间</span></span><br></pre></td></tr></table></figure></li><li>补充一个有用的技术，它使得C++编译后的函数名称修饰方式和C语言相同，采用了预定义宏__cplusplus<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">.........<span class="keyword">do</span> something</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure><blockquote><p>简而言之，如上代码使得重载非法，因为C语言不支持函数重载。</p></blockquote></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="C-宏-macro-的定义与使用"><a href="#C-宏-macro-的定义与使用" class="headerlink" title="C++宏(macro)的定义与使用"></a>C++宏(macro)的定义与使用</h2><a id="more"></a><ul><li>C++里的宏的执行方式很简单，就是直接进行替换，它不占用运行时间，但是会使得展开后代码变长。</li><li>普通宏定义注意事项</li></ul><p>1.宏名一般大写。<br>2.宏名替换发生在预处理阶段。<br>3.宏定义末尾一般不加分号。<br>4.宏定义不分配内存。<br>5.宏定义的作用域是其后的程序。<br>6.宏定义可以嵌套。</p><ul><li>带参宏</li></ul><p>1.尽量多加括号。<br>2.宏名和括号间不要有空格。<br>3.宏不做计算。</p><ul><li>一些基础宏定义方式<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dd double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 100</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(A,B) ((A) &gt; (B)? A : B)</span></span><br></pre></td></tr></table></figure></li><li>特殊符号#和##</li></ul><p>1.#是转换符，它把一个符号直接转换成字符串，如下:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TOSTRING( S ) #S</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; TOSTRING( myTest );</span><br></pre></td></tr></table></figure><blockquote><p>Tips:#@表示用单引号表示字符。<br>输出如下</p></blockquote><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myTest</span><br></pre></td></tr></table></figure><p>2.##是连接符，它把两个记号连接成一个，如下:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实际定义了x1和x2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEF_X( n ) x##n</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">DEF_X</span><span class="params">( <span class="number">1</span> )</span> </span>= <span class="number">4</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">DEF_X</span><span class="params">( <span class="number">2</span> )</span> </span>= <span class="number">3</span>;</span><br></pre></td></tr></table></figure><ul><li>变参宏:一个十分有用的技术，它的使用有两种方式。</li></ul><p>1.不给变参名字，采用默认变参__VA_ARGS__代替可变参数，如下:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> print(s,...) printf(s,__VA_ARGS__)</span></span><br><span class="line">print(<span class="string">&quot;hello,I am %s,I am %d years old&quot;</span>,<span class="string">&quot;Joe&quot;</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure><blockquote><p>上面的这种做法是有一定问题的，因为按照常理我们可以只用printf打印字符串，像面这样做的话，如下代码</p></blockquote><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&quot;my life&quot;</span>);</span><br></pre></td></tr></table></figure><blockquote><p>将被替换为print(“my life”,);这在g++下报错(MSVC不报错很奇怪…)。</p></blockquote><ul><li>解决方式有两种:</li></ul><p>1.采用转换符#，因为__VA_ARGS__无值，所以#__VA_ARGS__将其转换为空字符串，而字符串的拼接操作时被允许的。<br>2.采用连接符##，原理一样，不再赘述。</p><p>2.给变参起名字(常用名字有args等等)，如下演示:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prints(s,args...) fprintf(stderr,s,args)</span></span><br><span class="line">prints(hello, I am % s, I am % d years old<span class="string">&quot;,&quot;</span>Joe<span class="string">&quot;,18);</span></span><br></pre></td></tr></table></figure><blockquote><p>若变参为空，解决方式和上面的默认变参宏一样。(MSVC下第二种方式竟然报错)。</p></blockquote><ul><li>预定义宏: 编译器支持且默认自带的宏，常见的有<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; __LINE__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 返回当前行号</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; __FILE__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 当前文件名(绝对路径)</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; __TIME__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 当前文件编译时间</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; __DATE__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 编译日期</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; __TIMESTAMP__ &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 最后一次修改源代码的时间</span></span><br></pre></td></tr></table></figure></li><li>补充一个有用的技术，它使得C++编译后的函数名称修饰方式和C语言相同，采用了预定义宏__cplusplus<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">.........<span class="keyword">do</span> something</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure><blockquote><p>简而言之，如上代码使得重载非法，因为C语言不支持函数重载。</p></blockquote></li></ul>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;C-宏-macro-的定义与使用&quot;&gt;&lt;a href=&quot;#C-宏-macro-的定义与使用&quot; class=&quot;headerlink&quot; title=&quot;C++宏(macro)的定义与使用&quot;&gt;&lt;/a&gt;C++宏(macro)的定义与使用&lt;/h2&gt;</summary>
@@ -285,6 +308,21 @@
   </entry>
   
   <entry>
+    <title>Latex介绍</title>
+    <link href="http://joe-sdu.top/2020/11/15/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/latex/"/>
+    <id>http://joe-sdu.top/2020/11/15/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/latex/</id>
+    <published>2020-11-15T06:45:32.000Z</published>
+    <updated>2020-11-15T14:03:03.641Z</updated>
+    
+    
+    
+    
+    <category term="文本编辑工具" scheme="http://joe-sdu.top/categories/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Markdown介绍</title>
     <link href="http://joe-sdu.top/2020/11/15/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/markdown/"/>
     <id>http://joe-sdu.top/2020/11/15/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/markdown/</id>
@@ -299,21 +337,6 @@
     <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;MarkDown编辑代码块&quot;&gt;&lt;a href=&quot;#MarkDown编辑代码块&quot; class=&quot;headerlink&quot; title=&quot;MarkDown编辑代码块&quot;&gt;&lt;/a&gt;MarkDown编辑代码块&lt;/h2&gt;</summary>
       
-    
-    
-    
-    <category term="文本编辑工具" scheme="http://joe-sdu.top/categories/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Latex介绍</title>
-    <link href="http://joe-sdu.top/2020/11/15/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/latex/"/>
-    <id>http://joe-sdu.top/2020/11/15/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91/latex/</id>
-    <published>2020-11-15T06:45:32.000Z</published>
-    <updated>2020-11-15T14:03:03.641Z</updated>
-    
     
     
     
@@ -342,6 +365,21 @@
   </entry>
   
   <entry>
+    <title>Javascript基础知识</title>
+    <link href="http://joe-sdu.top/2020/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Javascript%E5%9F%BA%E7%A1%80/"/>
+    <id>http://joe-sdu.top/2020/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Javascript%E5%9F%BA%E7%A1%80/</id>
+    <published>2020-11-13T08:47:39.000Z</published>
+    <updated>2020-11-13T08:48:07.755Z</updated>
+    
+    
+    
+    
+    <category term="搭建一个小型博客需要的前导知识" scheme="http://joe-sdu.top/categories/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E5%8D%9A%E5%AE%A2%E9%9C%80%E8%A6%81%E7%9A%84%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>linux入门</title>
     <link href="http://joe-sdu.top/2020/11/13/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/linux/"/>
     <id>http://joe-sdu.top/2020/11/13/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/linux/</id>
@@ -356,43 +394,6 @@
     
     
     <category term="实用工具" scheme="http://joe-sdu.top/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>npm的使用</title>
-    <link href="http://joe-sdu.top/2020/11/13/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/npm/"/>
-    <id>http://joe-sdu.top/2020/11/13/%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E5%85%B7/npm/</id>
-    <published>2020-11-13T08:47:39.000Z</published>
-    <updated>2020-11-26T14:07:23.841Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="npm介绍"><a href="#npm介绍" class="headerlink" title="npm介绍"></a>npm介绍</h2><p>npm，全称Node package manager，是一个方便快捷的包管理器。它的发展与node.js相辅相成。<br>什么是包管理器呢?其实理解起来很简单，就是帮助我们管理一大堆代码的仓库，有了它以后，我们需要啥代码就可以直接在里面拿。</p><h2 id="npm的常用命令"><a href="#npm的常用命令" class="headerlink" title="npm的常用命令"></a>npm的常用命令</h2><ul><li>npm install package<blockquote><p>此命令下载package</p></blockquote></li><li>npm uninstall package<blockquote><p>此命令卸载package</p></blockquote></li><li>npm ls<blockquote><p>此命令查看本地全部的package</p></blockquote></li><li>npm search package<blockquote><p>此命令查询package的详细信息</p></blockquote></li><li>npm -v<blockquote><p>此命令查看当前npm的版本</p></blockquote></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;npm介绍&quot;&gt;&lt;a href=&quot;#npm介绍&quot; class=&quot;headerlink&quot; title=&quot;npm介绍&quot;&gt;&lt;/a&gt;npm介绍&lt;/h2&gt;&lt;p&gt;npm，全称Node package manager，是一个方便快捷的包管理器。它的发展与node.js相辅相成。&lt;</summary>
-      
-    
-    
-    
-    <category term="实用工具" scheme="http://joe-sdu.top/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript基础知识</title>
-    <link href="http://joe-sdu.top/2020/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Javascript%E5%9F%BA%E7%A1%80/"/>
-    <id>http://joe-sdu.top/2020/11/13/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Javascript%E5%9F%BA%E7%A1%80/</id>
-    <published>2020-11-13T08:47:39.000Z</published>
-    <updated>2020-11-13T08:48:07.755Z</updated>
-    
-    
-    
-    
-    <category term="搭建一个小型博客需要的前导知识" scheme="http://joe-sdu.top/categories/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E5%8D%9A%E5%AE%A2%E9%9C%80%E8%A6%81%E7%9A%84%E5%89%8D%E5%AF%BC%E7%9F%A5%E8%AF%86/"/>
     
     
   </entry>
